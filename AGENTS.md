@@ -161,9 +161,9 @@ En internacional, `group` es `programa`, `stage` o `contacto`. `status` es `abie
 
 ## Campos que no se dejan a medias
 
-Madrid: `id`, `org`, `title`, `location`, `modality` (`hibrido`, `remoto`, `presencial`, `no_indicado`), `modality_label`, `hours`, `hours_confirmed`, `pay`, `pay_confirmed`, `deadline`, `start`, `fit`, `fit_reason`, `caveats`, `categories` (solo `energia`, `almacenamiento`, `nuclear`, `investigacion`, `consultoria`, `innovacion`), `status` (`cumple` o `por_confirmar`), `url`, `source`, `verified_on` (`AAAA-MM-DD`).
+Madrid: `id`, `org`, `title`, `location`, `modality` (`hibrido`, `remoto`, `presencial`, `no_indicado`), `modality_label`, `hours`, `hours_confirmed`, `pay`, `pay_confirmed`, `deadline`, `start`, `fit`, `fit_reason`, `caveats`, `categories` (solo `energia`, `almacenamiento`, `nuclear`, `investigacion`, `consultoria`, `innovacion`), `status` (`cumple` o `por_confirmar`), `url`, `source`, `verified_on` (`AAAA-MM-DD`). Opcional: `added_on` (`AAAA-MM-DD`, fecha en que se añadió por primera vez la ficha para destacar novedades de la semana).
 
-Internacional: `id`, `group`, `country`, `country_label`, `org`, `title`, `location`, `deadline`, `dl_sort` (`AAAA-MM-DD` o `continua`), `start`, `duration`, `pay`, `hours`, `fit`, `status`, `why`, `req`, `url`, `source`.
+Internacional: `id`, `group`, `country`, `country_label`, `org`, `title`, `location`, `deadline`, `dl_sort` (`AAAA-MM-DD` o `continua`), `start`, `duration`, `pay`, `hours`, `fit`, `status`, `why`, `req`, `url`, `source`. Opcional: `added_on` (`AAAA-MM-DD`, fecha en que entró por primera vez al informe).
 
 `id` en minúsculas y guiones, estable entre semanas.
 

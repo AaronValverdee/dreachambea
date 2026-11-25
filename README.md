@@ -23,3 +23,5 @@ python3 scripts/build.py
 ```
 
 Lee `data/opportunities.json` y sobrescribe `index.html`. Edita el JSON (fecha, ofertas, textos) y vuelve a ejecutar el script.
+
+La página publicada va cifrada. La contraseña se lee de `.page-password` en la raíz del repo (ese archivo no se sube). Sin él, el script no genera el informe.

@@ -14,6 +14,7 @@ El informe público sale de `data/opportunities.json`. `scripts/build.py` regene
 - No enviar candidaturas, ni escribir a empresas, ni redactar cartas, salvo que Aaron lo pida en ese mensaje.
 - No hacer commit ni push salvo que Aaron lo pida.
 - No quitar `<meta name="robots" content="noindex, nofollow">`.
+- No escribir la contraseña de la página en el repo, en el log ni en `index.html`. Está solo en `.page-password`, que git ignora. `scripts/build.py` la lee y publica el informe cifrado. Si falta ese archivo, el script se detiene.
 
 ## Perfil fijo
 

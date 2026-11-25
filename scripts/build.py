@@ -1,12 +1,20 @@
 #!/usr/bin/env python3
 """Regenera index.html a partir de data/opportunities.json."""
+import base64
 import html
 import json
+import os
 from pathlib import Path
+
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "opportunities.json"
 OUT = ROOT / "index.html"
+PASSWORD_FILE = ROOT / ".page-password"
+KDF_ITERATIONS = 120_000
 
 H = html.escape
 data = json.loads(DATA.read_text(encoding="utf-8"))
@@ -222,5 +230,66 @@ document.querySelectorAll('#intl .gh').forEach(h=>{{const g=h.nextElementSibling
 document.getElementById('icount').textContent=n+' de {nint} visibles';}}
 iapply();
 </script></body></html>'''
-OUT.write_text(page, encoding='utf-8')
-print(n,ncum,nhyb,nhrs,npay,'intl',nint,nopen)
+
+def locked_page(report_html):
+    if not PASSWORD_FILE.exists():
+        raise SystemExit("Falta .page-password. No se publica el informe en claro.")
+    password = PASSWORD_FILE.read_text(encoding="utf-8").strip()
+    if not password:
+        raise SystemExit(".page-password está vacío. No se publica el informe en claro.")
+    salt = os.urandom(16)
+    nonce = os.urandom(12)
+    key = PBKDF2HMAC(
+        algorithm=hashes.SHA256(),
+        length=32,
+        salt=salt,
+        iterations=KDF_ITERATIONS,
+    ).derive(password.encode("utf-8"))
+    encrypted = AESGCM(key).encrypt(nonce, report_html.encode("utf-8"), None)
+    payload = base64.b64encode(salt + nonce + encrypted).decode("ascii")
+    return f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Prácticas y becas</title>
+<style>
+:root{{--bg:#f6f7fb;--ink:#1d2433;--mut:#5d6779;--line:#e5e8ef;--acc:#0f766e}}
+*{{box-sizing:border-box}}
+body{{margin:0;min-height:100vh;display:grid;place-items:center;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;background:linear-gradient(135deg,#0f766e 0%,#1e40af 100%);color:var(--ink)}}
+form{{width:min(420px,calc(100% - 32px));background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 16px 40px rgba(15,23,42,.18)}}
+h1{{margin:0 0 6px;font-size:22px}}
+p{{margin:0 0 18px;color:var(--mut);font-size:14px}}
+label{{display:block;font-size:13px;margin-bottom:6px}}
+input{{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:16px}}
+button{{margin-top:14px;width:100%;border:0;border-radius:12px;background:var(--acc);color:#fff;padding:12px 14px;font-size:15px;cursor:pointer}}
+button:hover{{background:#115e59}}
+.err{{min-height:1.2em;margin:10px 0 0;color:#b91c1c;font-size:13px}}
+</style></head><body>
+<form id="gate">
+<h1>Informe privado</h1>
+<p>Introduce la contraseña para ver las prácticas y becas.</p>
+<label for="pw">Contraseña</label>
+<input id="pw" type="password" autocomplete="current-password" autofocus>
+<button type="submit">Entrar</button>
+<p class="err" id="err" role="alert"></p>
+</form>
+<script>
+const PAYLOAD="{payload}";
+const ITER={KDF_ITERATIONS};
+const KEY="dreachambea-pw";
+const err=document.getElementById("err");
+async function openReport(pw){{
+ const raw=Uint8Array.from(atob(PAYLOAD),c=>c.charCodeAt(0));
+ const km=await crypto.subtle.importKey("raw",new TextEncoder().encode(pw),"PBKDF2",false,["deriveKey"]);
+ const key=await crypto.subtle.deriveKey({{name:"PBKDF2",salt:raw.slice(0,16),iterations:ITER,hash:"SHA-256"}},km,{{name:"AES-GCM",length:256}},false,["decrypt"]);
+ const buf=await crypto.subtle.decrypt({{name:"AES-GCM",iv:raw.slice(16,28)}},key,raw.slice(28));
+ sessionStorage.setItem(KEY,pw);
+ document.open();document.write(new TextDecoder().decode(buf));document.close();
+}}
+async function tryOpen(pw){{
+ try{{await openReport(pw);}}catch(e){{sessionStorage.removeItem(KEY);err.textContent="Contraseña incorrecta";}}
+}}
+document.getElementById("gate").addEventListener("submit",e=>{{e.preventDefault();err.textContent="";tryOpen(document.getElementById("pw").value);}});
+const saved=sessionStorage.getItem(KEY);if(saved)tryOpen(saved);
+</script></body></html>'''
+
+OUT.write_text(locked_page(page), encoding="utf-8")
+print(n, ncum, nhyb, nhrs, npay, "intl", nint, nopen)

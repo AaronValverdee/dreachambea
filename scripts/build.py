@@ -4,6 +4,7 @@ import base64
 import html
 import json
 import os
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from cryptography.hazmat.primitives import hashes
@@ -19,6 +20,23 @@ KDF_ITERATIONS = 120_000
 H = html.escape
 data = json.loads(DATA.read_text(encoding="utf-8"))
 UPDATED = data["updated"]
+# «Nuevo» si first_seen cae en los 7 días naturales que acaban en updated
+# (desde updated − 6 días hasta updated, inclusive).
+UPDATED_DATE = datetime.strptime(UPDATED, "%d/%m/%Y").date()
+NEW_LOOKBACK = timedelta(days=6)
+
+def is_new(entry):
+    raw = entry.get("first_seen") or ""
+    try:
+        seen = datetime.strptime(raw, "%Y-%m-%d").date()
+    except ValueError:
+        return False
+    return UPDATED_DATE - NEW_LOOKBACK <= seen <= UPDATED_DATE
+
+def nuevo_html(entry):
+    if not is_new(entry):
+        return ""
+    return '<span class="badge new">Nuevo</span>'
 opps = data["opportunities"]
 top5 = data["top5"]
 radar = data["radar"]
@@ -40,9 +58,9 @@ def card(o,rank=None):
     st='<span class="badge ok">Cumple criterios</span>' if o["status"]=="cumple" else '<span class="badge warn">Algún dato por confirmar</span>'
     urgent=' urgent' if 'HOY' in o["deadline"] else ''
     def val(v,conf): return H(v)+('' if conf else ' <span class="q" title="No confirmado en la oferta">?</span>')
-    return f'''<article class="card{urgent}" data-mod="{o['modality']}" data-cat="{' '.join(o['categories'])}" data-status="{o['status']}">
+    return f'''<article class="card{urgent}" data-mod="{o['modality']}" data-cat="{' '.join(o['categories'])}" data-status="{o['status']}" data-new="{'1' if is_new(o) else '0'}">
   <header>{'<span class="rank">#%d</span>'%rank if rank else ''}<div><p class="org">{H(o['org'])}</p><h3>{H(o['title'])}</h3></div></header>
-  <div class="meta">{st}<span class="chip mod m-{o['modality']}">{MOD[o['modality']]}</span>{chips}</div>
+  <div class="meta">{nuevo_html(o)}{st}<span class="chip mod m-{o['modality']}">{MOD[o['modality']]}</span>{chips}</div>
   <dl>
    <div><dt>📍 Lugar</dt><dd>{H(o['location'])}</dd></div>
    <div><dt>🏠 Modalidad</dt><dd>{H(o['modality_label'])}</dd></div>
@@ -57,9 +75,11 @@ def card(o,rank=None):
 </article>'''
 n=len(opps); ncum=sum(o["status"]=="cumple" for o in opps); nhyb=sum(o["modality"]=="hibrido" for o in opps)
 npay=sum(o["pay_confirmed"] for o in opps); nhrs=sum(o["hours_confirmed"] for o in opps)
+nnew_madrid=sum(is_new(o) for o in opps); nnew_radar=sum(is_new(r) for r in radar); nnew_intl=sum(is_new(o) for o in intl)
+nnew=nnew_madrid+nnew_radar+nnew_intl
 top_html="".join(card(next(o for o in opps if o["id"]==i),k+1) for k,i in enumerate(top5))
 all_html="".join(card(o) for o in opps_sorted)
-radar_html="".join(f'<li><a href="{H(r["url"])}" target="_blank" rel="noopener"><strong>{H(r["org"])}</strong>: {H(r["title"])}</a><span>{H(r["why"])}</span><em>Plazo: {H(r["deadline"])}</em></li>' for r in radar)
+radar_html="".join(f'<li data-new="{"1" if is_new(r) else "0"}">{nuevo_html(r)}<a href="{H(r["url"])}" target="_blank" rel="noopener"><strong>{H(r["org"])}</strong>: {H(r["title"])}</a><span>{H(r["why"])}</span><em>Plazo: {H(r["deadline"])}</em></li>' for r in radar)
 up_html="".join(f'<li><a href="{H(u["url"])}" target="_blank" rel="noopener"><strong>{H(u["name"])}</strong></a><span>{H(u["detail"])}</span></li>' for u in upcoming)
 SI={"ok":"✅","parcial":"🟡","no":"⛔"}
 src_html="".join(f'<li><span class="si">{SI[s["status"]]}</span><div><strong>{H(s["name"])}</strong><span>{H(s["detail"])}</span></div></li>' for s in data["sources"])
@@ -72,9 +92,9 @@ IST={"abierta":('ok','Abierta'),"proxima":('warn','Abre pronto'),"continua":('co
 def icard(o):
     cl,lab=IST[o["status"]]
     flag=CTRY[o["country"]].split(" ")[0]
-    return f"""<article class="card icard" data-country="{o['country']}">
+    return f"""<article class="card icard" data-country="{o['country']}" data-new="{'1' if is_new(o) else '0'}">
   <header><div><p class="org">{H(o['org'])}</p><h3>{H(o['title'])}</h3></div></header>
-  <div class="meta"><span class="badge {cl}">{lab}</span><span class="chip ctry">{flag} {H(o['country_label'])}</span></div>
+  <div class="meta">{nuevo_html(o)}<span class="badge {cl}">{lab}</span><span class="chip ctry">{flag} {H(o['country_label'])}</span></div>
   <dl>
    <div><dt>📍 Lugar</dt><dd>{H(o['location'])}</dd></div>
    <div><dt>📅 Plazo</dt><dd>{H(o['deadline'])}</dd></div>
@@ -127,6 +147,10 @@ h2{{margin:42px 0 6px;font-size:24px;letter-spacing:-.01em}}.sub{{color:var(--mu
 .org{{margin:0;color:var(--acc2);font-weight:600;font-size:13.5px}}.card h3{{margin:2px 0 0;font-size:17px;line-height:1.3}}
 .meta{{display:flex;flex-wrap:wrap;gap:6px}}.chip,.badge{{font-size:12px;padding:3px 9px;border-radius:99px;border:1px solid var(--line);background:#f8fafc;color:var(--mut)}}
 .badge.ok{{background:#ecfdf5;color:var(--ok);border-color:#a7f3d0}}.badge.warn{{background:#fffbeb;color:var(--warn);border-color:#fde68a}}
+.badge.new{{background:#fff7ed;color:#c2410c;border-color:#fdba74;font-weight:700}}
+.mini-filters{{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}}
+.mini-filters button{{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;font-size:13px;cursor:pointer;color:var(--ink)}}
+.mini-filters button.on{{background:var(--ink);color:#fff;border-color:var(--ink)}}
 .m-hibrido{{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}}.m-presencial{{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe}}.m-remoto{{background:#ecfeff;color:#0e7490}}
 dl{{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}}dl div{{min-width:0}}dt{{font-size:12px;color:var(--mut)}}dd{{margin:0;font-size:14px}}
 .q{{display:inline-block;background:#fde68a;color:#78350f;border-radius:50%;width:16px;height:16px;font-size:11px;text-align:center;line-height:16px;font-weight:700}}
@@ -174,6 +198,7 @@ dl{{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}}dl div{{mi
 <div class="stat"><b>{nhyb}</b><span>híbridas</span></div>
 <div class="stat"><b>{nhrs}</b><span>con horas ≤30 h confirmadas</span></div>
 <div class="stat"><b>{npay}</b><span>con remuneración confirmada</span></div>
+<div class="stat"><b>{nnew}</b><span>nuevas en Madrid, radar e internacional</span></div>
 </div>
 <div class="alert">⏰ <strong>Urgente:</strong> la plaza de baterías de ion-Na de la UAM (10 h/semana, 600 €/mes) cierra <strong>hoy, 25/11</strong>. Exige tener ya un Máster terminado.</div>
 
@@ -186,11 +211,12 @@ dl{{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}}dl div{{mi
 <div class="frow"><label>Modalidad</label><button data-f="mod" data-v="all" class="on">Todas</button>{modbtn}</div>
 <div class="frow"><label>Categoría</label><button data-f="cat" data-v="all" class="on">Todas</button>{catbtn}</div>
 <div class="frow"><label>Criterios</label><button data-f="st" data-v="all" class="on">Todas</button><button data-f="st" data-v="cumple">Cumplen todo</button><button data-f="st" data-v="por_confirmar">Con datos por confirmar</button><span id="count"></span></div>
+<div class="frow"><label>Novedad</label><button data-f="nw" data-v="all" class="on">Todas</button><button data-f="nw" data-v="new">Solo nuevas</button></div>
 </div>
 <div class="grid" id="all">{all_html}</div>
 
 <div class="two">
-<section><h2>🔭 En el radar (no cumplen todos los criterios)</h2><p class="sub">Interesantes por tema, pero superan las 30 h o piden otro perfil.</p><ul class="list">{radar_html}</ul></section>
+<section><h2>🔭 En el radar (no cumplen todos los criterios)</h2><p class="sub">Interesantes por tema, pero superan las 30 h o piden otro perfil. <span class="legend">{nnew_radar} nuevas.</span></p><div class="mini-filters" id="radar-filters"><button data-r="all" class="on">Todas</button><button data-r="new">Solo nuevas</button></div><ul class="list" id="radar">{radar_html}</ul></section>
 <section><h2>📆 Próximas convocatorias a vigilar</h2><p class="sub">Programas con el formato ideal que ahora están cerrados o requieren su acceso.</p><ul class="list">{up_html}</ul></section>
 </div>
 
@@ -203,7 +229,7 @@ dl{{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}}dl div{{mi
 </div>
 <h3 class="gh">🗓️ Calendario de plazos</h3>
 <ul class="timeline">{tl_html}</ul>
-<div class="ifilters"><div class="frow"><label>País</label><button data-c="all" class="on">Todos</button>{cbtn}<span id="icount"></span></div></div>
+<div class="ifilters"><div class="frow"><label>País</label><button data-c="all" class="on">Todos</button>{cbtn}<span id="icount"></span></div><div class="frow"><label>Novedad</label><button data-n="all" class="on">Todas</button><button data-n="new">Solo nuevas</button></div></div>
 {intl_groups_html}
 <div class="two">
 <section><h2>📆 Convocatorias internacionales a vigilar</h2><p class="sub">Programas cerrados ahora o con una segunda ronda.</p><ul class="list">{iw_html}</ul></section>
@@ -217,15 +243,22 @@ dl{{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}}dl div{{mi
 </main>
 <footer class="page">Informe preparado por Dreachambea · {UPDATED}</footer>
 <script>
-const st={{mod:'all',cat:'all',st:'all'}};
+const st={{mod:'all',cat:'all',st:'all',nw:'all'}};
 document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{{
  const f=b.dataset.f;st[f]=b.dataset.v;document.querySelectorAll(`.filters button[data-f="${{f}}"]`).forEach(x=>x.classList.toggle('on',x===b));apply();}}));
 function apply(){{let n=0;document.querySelectorAll('#all .card').forEach(c=>{{
- const ok=(st.mod==='all'||c.dataset.mod===st.mod)&&(st.cat==='all'||c.dataset.cat.split(' ').includes(st.cat))&&(st.st==='all'||c.dataset.status===st.st);
+ const ok=(st.mod==='all'||c.dataset.mod===st.mod)&&(st.cat==='all'||c.dataset.cat.split(' ').includes(st.cat))&&(st.st==='all'||c.dataset.status===st.st)&&(st.nw==='all'||c.dataset.new==='1');
  c.style.display=ok?'':'none';if(ok)n++;}});document.getElementById('count').textContent=n+' de {n} visibles';}}
 apply();
-let ic='all';document.querySelectorAll('.ifilters button').forEach(b=>b.addEventListener('click',()=>{{ic=b.dataset.c;document.querySelectorAll('.ifilters button').forEach(x=>x.classList.toggle('on',x===b));iapply();}}));
-function iapply(){{let n=0;document.querySelectorAll('#intl .icard').forEach(c=>{{const ok=ic==='all'||c.dataset.country===ic;c.style.display=ok?'':'none';if(ok)n++;}});
+document.querySelectorAll('#radar-filters button').forEach(b=>b.addEventListener('click',()=>{{
+ document.querySelectorAll('#radar-filters button').forEach(x=>x.classList.toggle('on',x===b));
+ const only=b.dataset.r==='new';
+ document.querySelectorAll('#radar li').forEach(li=>{{li.style.display=!only||li.dataset.new==='1'?'':'none';}});
+}}));
+let ic='all', inew='all';
+document.querySelectorAll('.ifilters button[data-c]').forEach(b=>b.addEventListener('click',()=>{{ic=b.dataset.c;document.querySelectorAll('.ifilters button[data-c]').forEach(x=>x.classList.toggle('on',x===b));iapply();}}));
+document.querySelectorAll('.ifilters button[data-n]').forEach(b=>b.addEventListener('click',()=>{{inew=b.dataset.n;document.querySelectorAll('.ifilters button[data-n]').forEach(x=>x.classList.toggle('on',x===b));iapply();}}));
+function iapply(){{let n=0;document.querySelectorAll('#intl .icard').forEach(c=>{{const ok=(ic==='all'||c.dataset.country===ic)&&(inew==='all'||c.dataset.new==='1');c.style.display=ok?'':'none';if(ok)n++;}});
 document.querySelectorAll('#intl .gh').forEach(h=>{{const g=h.nextElementSibling&&h.nextElementSibling.nextElementSibling;if(g&&g.classList.contains('grid')){{const v=[...g.children].some(c=>c.style.display!=='none');h.style.display=v?'':'none';h.nextElementSibling.style.display=v?'':'none';}}}});
 document.getElementById('icount').textContent=n+' de {nint} visibles';}}
 iapply();
@@ -292,4 +325,4 @@ const saved=sessionStorage.getItem(KEY);if(saved)tryOpen(saved);
 </script></body></html>'''
 
 OUT.write_text(locked_page(page), encoding="utf-8")
-print(n, ncum, nhyb, nhrs, npay, "intl", nint, nopen)
+print(n, ncum, nhyb, nhrs, npay, "intl", nint, nopen, "nuevas", nnew, nnew_madrid, nnew_radar, nnew_intl)

@@ -32,7 +32,8 @@
       "status": "por_confirmar",
       "url": "https://repsol.wd3.myworkdayjobs.com/en-US/Repsol/job/Prcticas-Talent-Energy-2027---Primer-Semestre_84151-1",
       "source": "Portal de empleo de Repsol (Workday)",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "iberdrola-alumni-2027",
@@ -56,7 +57,8 @@
       "status": "por_confirmar",
       "url": "https://iberdrola.wd3.myworkdayjobs.com/en-US/Iberdrola/job/XMLNAME------Programa-Prcticas-Alumni-2027_R-35158",
       "source": "Portal de empleo de Iberdrola (Workday)",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "naturgy-impulsa-2027",
@@ -80,7 +82,8 @@
       "status": "cumple",
       "url": "https://www.linkedin.com/jobs/view/4489556639/",
       "source": "LinkedIn (oferta de Naturgy); info del programa en naturgy.com/programa-impulso",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "acciona-innovacion-agua",
@@ -105,7 +108,8 @@
       "status": "por_confirmar",
       "url": "https://www.linkedin.com/jobs/view/4474286262/",
       "source": "LinkedIn",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "siemens-westem-si",
@@ -130,7 +134,8 @@
       "status": "cumple",
       "url": "https://www.talentoteca.es/finder/details/72902544/westem-practicas-para-talento-femenino-stem-digital-industries-smart-infrastructure",
       "source": "Talentoteca (FUE)",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "acciona-energia-innovacion",
@@ -155,7 +160,8 @@
       "status": "cumple",
       "url": "https://www.talentoteca.es/finder/details/87794817/practicas-innovacion",
       "source": "Talentoteca (FUE), programa START",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "creara-eficiencia",
@@ -180,7 +186,8 @@
       "status": "por_confirmar",
       "url": "https://www.linkedin.com/jobs/view/4491509316/",
       "source": "LinkedIn",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "ignis-proyectos-energeticos",
@@ -206,7 +213,8 @@
       "status": "por_confirmar",
       "url": "https://www.linkedin.com/jobs/view/4485846711/",
       "source": "LinkedIn",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "sonnedix-bess",
@@ -231,7 +239,8 @@
       "status": "por_confirmar",
       "url": "https://www.linkedin.com/jobs/view/4481245305/",
       "source": "LinkedIn",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "westinghouse-training",
@@ -255,7 +264,8 @@
       "status": "por_confirmar",
       "url": "https://www.linkedin.com/jobs/view/4438320744/",
       "source": "LinkedIn",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "uam-baterias-pr14",
@@ -280,7 +290,8 @@
       "status": "cumple",
       "url": "https://www.uam.es/uam/investigacion/ofertas-empleo/contrato-conjuntanoviembre2026nacional",
       "source": "UAM – Ofertas de empleo de investigación (Anexo I, plaza PR14/11/2026)",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "enertis-testing-lab",
@@ -305,7 +316,8 @@
       "status": "por_confirmar",
       "url": "https://www.linkedin.com/jobs/view/4485524017/",
       "source": "LinkedIn",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "fisair-idi",
@@ -329,7 +341,8 @@
       "status": "por_confirmar",
       "url": "https://www.linkedin.com/jobs/view/4493008788/",
       "source": "LinkedIn",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     },
     {
       "id": "eag-seguridad",
@@ -353,7 +366,8 @@
       "status": "por_confirmar",
       "url": "https://empre.teamtailor.com/jobs/7096801-becarios-as-career-opportunities",
       "source": "Portal de empleo de EAG (Teamtailor)",
-      "verified_on": "2026-11-25"
+      "verified_on": "2026-11-25",
+      "first_seen": "2026-11-25"
     }
   ],
   "top5": [
@@ -369,35 +383,40 @@
       "title": "Investigador/a predoctoral: reactores nucleares avanzados (SMR) formadores de red (26.76 TN6 PRE)",
       "why": "Jornada completa (22–25 k€/año), 100 % presencial en Móstoles; exige Máster oficial. Muy afín si se plantea un doctorado.",
       "deadline": "01/12/2026",
-      "url": "https://jobs.energy.imdea.org/es/offer/453"
+      "url": "https://jobs.energy.imdea.org/es/offer/453",
+      "first_seen": "2026-11-25"
     },
     {
       "org": "UPM – ETSI Minas y Energía",
       "title": "Ayudante de investigación: recuperación de metales y caracterización de materiales (HRS2026/480-398)",
       "why": "37,5 h/semana y 28.000 €/año; admite Grado en Ingeniería Química (ICP-OES, FTIR, SEM-EDS).",
       "deadline": "Web 27/11/2026 (el PDF dice 30/11/2026)",
-      "url": "https://web.upm.es/hrs4r/hrs2026480-398-ayudante-de-investigacion-research-assistant"
+      "url": "https://web.upm.es/hrs4r/hrs2026480-398-ayudante-de-investigacion-research-assistant",
+      "first_seen": "2026-11-25"
     },
     {
       "org": "CIEMAT",
       "title": "4 plazas indefinidas (incl. Materiales y Química EUROfusion; materiales de confinamiento de residuos radiactivos)",
       "why": "Contrato indefinido a jornada completa; perfil con experiencia.",
       "deadline": "27/11/2026",
-      "url": "https://www.linkedin.com/posts/ciemat_madrid-ciemat-empleop%C3%BAblico-activity-7528023848034885632-EKuZ"
+      "url": "https://www.linkedin.com/posts/ciemat_madrid-ciemat-empleop%C3%BAblico-activity-7528023848034885632-EKuZ",
+      "first_seen": "2026-11-25"
     },
     {
       "org": "Framatome Spain (Pozuelo)",
       "title": "Prácticas en Proyectos IA (sector nuclear)",
       "why": "Supera el límite: 7 h/día (35 h). Paga 1.050 €/mes, es semipresencial y empieza en noviembre de 2026.",
       "deadline": "No indicada",
-      "url": "https://www.talentoteca.es/finder/details/04885702/practicas-en-proyectos-ia-madrid"
+      "url": "https://www.talentoteca.es/finder/details/04885702/practicas-en-proyectos-ia-madrid",
+      "first_seen": "2026-11-25"
     },
     {
       "org": "Enagás",
       "title": "Beca Ingeniería – Asuntos Regulatorios",
       "why": "Prefiere Ingeniería Química, pero es a jornada completa (excluida por horas).",
       "deadline": "No indicada",
-      "url": "https://www.linkedin.com/jobs/view/4487808298/"
+      "url": "https://www.linkedin.com/jobs/view/4487808298/",
+      "first_seen": "2026-11-25"
     }
   ],
   "upcoming": [
@@ -511,7 +530,8 @@
         "why": "Fusión: hay temas de ingeniería, ciencia y seguridad. Se pueden elegir hasta 5 temas.",
         "req": "Estar matriculada durante las prácticas, pasaporte de un miembro de ITER (UE ✔), inglés fluido. Carta con fechas disponibles y documento de nacionalidad (DNI/pasaporte).",
         "url": "https://www.iter.org/public/jobs/internships",
-        "source": "iter.org + anuncio ITER (plazo de la ola 1)"
+        "source": "iter.org + anuncio ITER (plazo de la ola 1)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cern-summer",
@@ -532,7 +552,8 @@
         "why": "Programa de verano muy reconocido. Encaja con el calendario del máster (verano).",
         "req": "Estudiante de grado o máster (no doctorado) con ≥6 semestres cursados. No haber estado antes en CERN más de 3 meses ni en este programa. Inglés.",
         "url": "https://careers.cern/jobs/cern-summer-student-programme-2026-member-and-non-member-state/",
-        "source": "careers.cern"
+        "source": "careers.cern",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cern-sti",
@@ -553,7 +574,8 @@
         "why": "Rama química y materiales del CERN: encaja de lleno con su perfil de IQ.",
         "req": "Nacional de un Estado miembro (España ✔), seguir matriculada a tiempo completo y que la universidad pida o recomiende prácticas. Inglés o francés.",
         "url": "https://www.linkedin.com/jobs/view/4485077982/",
-        "source": "LinkedIn (oferta publicada por CERN)"
+        "source": "LinkedIn (oferta publicada por CERN)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "psi-summer",
@@ -574,7 +596,8 @@
         "why": "Tiene un centro de Ingeniería y Ciencias Nucleares y otro de Energía y Medio Ambiente. Encaja con su máster.",
         "req": "Grado completo y matriculada en un máster (✔). Solo se puede solicitar un centro. CV de 2 páginas y carta de 1 página. Resolución en abril de 2027.",
         "url": "https://www.psi.ch/en/summerstudents/how-to-apply",
-        "source": "psi.ch"
+        "source": "psi.ch",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "sckcen",
@@ -595,7 +618,8 @@
         "why": "Catálogo de temas. Por ejemplo: 'matrices cementicias para inmovilizar residuos orgánicos' y 'radiofarmacia'. Química nuclear pura.",
         "req": "Se solicita tema a tema desde el catálogo.",
         "url": "https://www.sckcen.be/en/thesis-and-internship-topics",
-        "source": "sckcen.be"
+        "source": "sckcen.be",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "asnr-ch3i",
@@ -616,7 +640,8 @@
         "why": "Ingeniería química pura: adsorción, lecho fijo, curvas de ruptura y comparación con carbón activo.",
         "req": "Francés e inglés de nivel profesional. Bac+5 (máster).",
         "url": "https://www.linkedin.com/jobs/view/4485731051/",
-        "source": "LinkedIn (ASNR)"
+        "source": "LinkedIn (ASNR)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cea-acier",
@@ -637,7 +662,8 @@
         "why": "Materiales bajo irradiación. Enlaza su experiencia en I+D de materiales con el máster nuclear.",
         "req": "Máster 2 o último año de escuela de ingeniería.",
         "url": "https://www.emploi.cea.fr/offre-de-emploi/emploi-stage-m2-6-mois-caracterisation-des-effets-d-irradiation-dans-un-acier-pour-la-ive-generation-h-f_42060.aspx",
-        "source": "emploi.cea.fr"
+        "source": "emploi.cea.fr",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cea-radiolyse",
@@ -658,7 +684,8 @@
         "why": "Química del ciclo del combustible con espectroscopía avanzada: encaja con IQ y nuclear.",
         "req": "Bac+5 en química, fisicoquímica o radioquímica.",
         "url": "https://www.linkedin.com/jobs/view/4478146915/",
-        "source": "LinkedIn (CEA)"
+        "source": "LinkedIn (CEA)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "fra-oxyd",
@@ -679,7 +706,8 @@
         "why": "Corrosión y caracterización de materiales en entorno industrial nuclear.",
         "req": "Bac+5 con especialidad en materiales. Base de metalurgia.",
         "url": "https://www.linkedin.com/jobs/view/4471514912/",
-        "source": "LinkedIn (Framatome)"
+        "source": "LinkedIn (Framatome)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "asnr-iode",
@@ -700,7 +728,8 @@
         "why": "Desarrollo y validación de un método analítico (norma NF T 90-210). Química aplicada a la protección radiológica ambiental.",
         "req": "Perfil de química o radioquímica.",
         "url": "https://www.linkedin.com/jobs/view/4484684372/",
-        "source": "LinkedIn (ASNR)"
+        "source": "LinkedIn (ASNR)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "asnr-cr",
@@ -721,7 +750,8 @@
         "why": "Materiales de combustible avanzado. La ficha de LinkedIn tiene poco detalle.",
         "req": "No detallados en la ficha.",
         "url": "https://www.linkedin.com/jobs/view/4486042715/",
-        "source": "LinkedIn (ASNR)"
+        "source": "LinkedIn (ASNR)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cea-fusion-pt",
@@ -742,7 +772,8 @@
         "why": "Experimental: láser y pirometría sobre cerámicas nucleares. Posible tesis después.",
         "req": "Máster 2.",
         "url": "https://www.emploi.cea.fr/offre-de-emploi/emploi-stage-developpement-d-une-experience-pour-la-mesure-du-point-de-fusion-du-combustible-h-f_42311.aspx",
-        "source": "emploi.cea.fr"
+        "source": "emploi.cea.fr",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cea-radiochim",
@@ -763,7 +794,8 @@
         "why": "Extracción líquido-líquido: operación unitaria clásica de IQ aplicada al reciclado.",
         "req": "⚠️ La oferta pide francés nativo.",
         "url": "https://www.emploi.cea.fr/offre-de-emploi/emploi-stage-ingenieur-radiochimiste-h-f_41916.aspx",
-        "source": "emploi.cea.fr"
+        "source": "emploi.cea.fr",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "fra-tritium",
@@ -784,7 +816,8 @@
         "why": "Transporte de especies en materiales: fenómenos de transporte de IQ aplicados a fusión y fisión.",
         "req": "Ver la oferta.",
         "url": "https://framatome-career.talent-soft.com/offre-de-emploi/emploi-stage-etude-de-la-permeation-et-du-degazage-du-tritium-dans-les-materiaux-f-h_27933.aspx",
-        "source": "framatome-career (TalentSoft)"
+        "source": "framatome-career (TalentSoft)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "edf-arcanes",
@@ -805,7 +838,8 @@
         "why": "Residuos y ciclo del combustible con cálculo Monte Carlo y Python.",
         "req": "Bac+5 en curso. Neutrónica y protección radiológica, Python/C++.",
         "url": "https://www.linkedin.com/jobs/view/4488897442/",
-        "source": "LinkedIn (EDF)"
+        "source": "LinkedIn (EDF)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "corrosion-andra",
@@ -826,7 +860,8 @@
         "why": "Corrosión y electroquímica aplicada a residuos radiactivos.",
         "req": "Máster 2 o escuela de ingeniería. Química, materiales o corrosión.",
         "url": "https://www.linkedin.com/jobs/view/4488173109/",
-        "source": "LinkedIn (Institut de la Corrosion)"
+        "source": "LinkedIn (Institut de la Corrosion)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "asnr-loca",
@@ -847,7 +882,8 @@
         "why": "Seguridad del combustible: metalografía y análisis de fragmentos.",
         "req": "Ver la oferta.",
         "url": "https://www.linkedin.com/jobs/view/4485598656/",
-        "source": "LinkedIn (ASNR)"
+        "source": "LinkedIn (ASNR)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "asnr-bitume",
@@ -868,7 +904,8 @@
         "why": "Residuos bituminosos y caracterización por imagen.",
         "req": "Ver la oferta.",
         "url": "https://asnr-career.talent-soft.com/offre-de-emploi/emploi-stage-traitement-d-images-tomox-du-bitume-irradie-h-f_1767.aspx",
-        "source": "asnr-career (TalentSoft)"
+        "source": "asnr-career (TalentSoft)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "asnr-teleray",
@@ -889,7 +926,8 @@
         "why": "Vigilancia radiológica del entorno.",
         "req": "Ver la oferta.",
         "url": "https://asnr-career.talent-soft.com/offre-de-emploi/emploi-stage-caracterisation-et-qualification-de-balises-de-spectrometrie-gamma-de-l-asnr-reseau-teleray-h-f_1787.aspx",
-        "source": "asnr-career (TalentSoft)"
+        "source": "asnr-career (TalentSoft)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "asnr-mircom",
@@ -910,7 +948,8 @@
         "why": "Física de radiaciones e instrumentación (Geant4, SRIM).",
         "req": "Francés e inglés avanzados.",
         "url": "https://www.linkedin.com/jobs/view/4486053038/",
-        "source": "LinkedIn (ASNR)"
+        "source": "LinkedIn (ASNR)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cea-incert",
@@ -931,7 +970,8 @@
         "why": "Modelización del combustible con aprendizaje automático.",
         "req": "Francés fluido, inglés intermedio.",
         "url": "https://www.emploi.cea.fr/offre-de-emploi/emploi-stage-methodologie-d-analyse-des-incertitudes-dans-les-simulations-des-combustibles-nucleaires-h-f_41667.aspx",
-        "source": "emploi.cea.fr"
+        "source": "emploi.cea.fr",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cea-cabri",
@@ -952,7 +992,8 @@
         "why": "Neutrónica pura, muy alineada con el máster.",
         "req": "Máster 2 nuclear.",
         "url": "https://www.emploi.cea.fr/offre-de-emploi/emploi-stage-etude-neutronique-du-reacteur-nucleaire-cabri-h-f_42431.aspx",
-        "source": "emploi.cea.fr"
+        "source": "emploi.cea.fr",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cea-crit",
@@ -973,7 +1014,8 @@
         "why": "Criticidad y validación con experimentos.",
         "req": "Máster 2 en física nuclear o 3.º de escuela de ingeniería.",
         "url": "https://www.linkedin.com/jobs/view/4473351256/",
-        "source": "LinkedIn (CEA)"
+        "source": "LinkedIn (CEA)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cea-surete",
@@ -994,7 +1036,8 @@
         "why": "Análisis de seguridad en instalaciones reales.",
         "req": "Máster 1 o 2 en seguridad nuclear o gestión de riesgos.",
         "url": "https://www.linkedin.com/jobs/view/4478461255/",
-        "source": "LinkedIn (CEA)"
+        "source": "LinkedIn (CEA)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cea-decay",
@@ -1015,7 +1058,8 @@
         "why": "Neutrónica aplicada a la seguridad.",
         "req": "No detallados en la ficha.",
         "url": "https://www.linkedin.com/jobs/view/4480223774/",
-        "source": "LinkedIn (CEA)"
+        "source": "LinkedIn (CEA)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "cea-mhd",
@@ -1036,7 +1080,8 @@
         "why": "CFD con OpenFOAM para fusión. Mecánica de fluidos y transmisión de calor.",
         "req": "Bac+5 en mecánica de fluidos o CFD.",
         "url": "https://www.linkedin.com/jobs/view/4486764781/",
-        "source": "LinkedIn (CEA)"
+        "source": "LinkedIn (CEA)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "orano-emb",
@@ -1057,7 +1102,8 @@
         "why": "Seguridad-criticidad en transporte (APOLLO2, CRISTAL, TRIPOLI-4).",
         "req": "Último año de ingeniería o Máster 2 en neutrónica o criticidad.",
         "url": "https://www.linkedin.com/jobs/view/4484386115/",
-        "source": "LinkedIn (Orano)"
+        "source": "LinkedIn (Orano)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "fra-3d",
@@ -1078,7 +1124,8 @@
         "why": "Materiales y procesado en la fábrica de combustible.",
         "req": "Bac+5 en materiales metálicos.",
         "url": "https://www.linkedin.com/jobs/view/4470001754/",
-        "source": "LinkedIn (Framatome)"
+        "source": "LinkedIn (Framatome)",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "epfl-lrs",
@@ -1099,7 +1146,8 @@
         "why": "Ahora el LRS remite a sus páginas de proyectos de máster. La vía es escribir a un profesor con propuesta y CV.",
         "req": "Seguir matriculada en la UPM y que la UPM reconozca el proyecto. Supervisión de un profesor de la EPFL. Sin matrícula. (Summer@EPFL es solo para informática e ingeniería eléctrica.)",
         "url": "https://www.epfl.ch/labs/lrs/project-proposals-for-students/",
-        "source": "epfl.ch"
+        "source": "epfl.ch",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "psi-lnm",
@@ -1120,7 +1168,8 @@
         "why": "TFM anteriores sobre vainas de Zr, aceros ODS, corrosión bajo tensión y química de geles: encaja con IQ y materiales.",
         "req": "La página solo lista TFM pasados. Hay que escribir al laboratorio con una propuesta.",
         "url": "https://www.psi.ch/en/lnm/list-of-master-theses",
-        "source": "psi.ch"
+        "source": "psi.ch",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "mit-nse",
@@ -1141,7 +1190,8 @@
         "why": "Grupos afines a materiales y energía: Michael Short (materiales bajo irradiación) y Ju Li (materiales y energía).",
         "req": "La invitación sale del profesor. Hace falta visado J-1 y acreditar fondos (ver FAQ del ISO).",
         "url": "https://iso.mit.edu/getting-started/visiting-students-faq/",
-        "source": "iso.mit.edu · nse.mit.edu"
+        "source": "iso.mit.edu · nse.mit.edu",
+        "first_seen": "2026-11-25"
       },
       {
         "id": "oecd-nea",
@@ -1162,7 +1212,8 @@
         "why": "La NEA está en la lista oficial de destinos y España es país miembro. Sirve para el periodo de prácticas del máster, a jornada completa: el trabajo habitual es análisis y política nuclear, no laboratorio.",
         "req": "Seguir matriculada durante toda la estancia. Inglés o francés de nivel alto y disposición a usar el otro. Indicar fechas disponibles en la solicitud.",
         "url": "https://www.oecd.org/en/about/careers/internships.html",
-        "source": "Página oficial de prácticas de la OCDE"
+        "source": "Página oficial de prácticas de la OCDE",
+        "first_seen": "2026-11-25"
       }
     ],
     "extra_links": [

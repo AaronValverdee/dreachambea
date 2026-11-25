@@ -14,6 +14,7 @@ El informe público sale de `data/opportunities.json`. `scripts/build.py` regene
 - No enviar candidaturas, ni escribir a empresas, ni redactar cartas, salvo que Aaron lo pida en ese mensaje.
 - No hacer commit ni push salvo que Aaron lo pida.
 - No quitar `<meta name="robots" content="noindex, nofollow">`.
+- No cambies `first_seen` de una ficha que ya existe. Es el día en que entró, no el de la última revisión.
 - No escribir la contraseña de la página en el repo, en el log ni en `index.html`. Está solo en `.page-password`, que git ignora. `scripts/build.py` la lee y publica el informe cifrado. Si falta ese archivo, el script se detiene.
 
 ## Perfil fijo
@@ -35,7 +36,7 @@ Presupuesto: una sesión. Si LinkedIn devuelve 429 o un portal pide captcha, an�
 1. Lee este archivo, la última entrada de `data/research-log.md` y las claves `updated`, `top5`, `radar`, `upcoming` e `international.timeline` del JSON.
 2. **Plazos.** Abre cada ficha cuya fecha caiga en los próximos 21 días, y cualquier fila del calendario de abajo que esté en ventana. Si el enlace es 404, la oferta está cerrada o ya no cumple, sácala de la lista activa y escribe una línea en `dropped` o en el log. No dejes una ficha «abierta» con el enlace muerto.
 3. **Un solo carril.** Semana ISO módulo 4. Haz ese carril y los pendientes que el log marque para esta semana. No recorras los otros tres.
-4. **Puntúa y edita** el JSON con las reglas de más abajo. Fecha `updated` en `DD/MM/AAAA`.
+4. **Puntúa y edita** el JSON con las reglas de más abajo. Fecha `updated` en `DD/MM/AAAA`. En cada ficha nueva de `opportunities`, `radar` o `international.opportunities`, pon `first_seen` en `AAAA-MM-DD`, el mismo día del run. Si la ficha ya estaba, deja `first_seen` como está.
 5. Desde la raíz del repo: `python scripts/build.py`. Tiene que terminar sin error.
 6. Añade **arriba** del log una entrada nueva con el formato de abajo. En el chat, entrega ese mismo resumen a Aaron.
 
@@ -161,13 +162,21 @@ En internacional, `group` es `programa`, `stage` o `contacto`. `status` es `abie
 
 ## Campos que no se dejan a medias
 
-Madrid: `id`, `org`, `title`, `location`, `modality` (`hibrido`, `remoto`, `presencial`, `no_indicado`), `modality_label`, `hours`, `hours_confirmed`, `pay`, `pay_confirmed`, `deadline`, `start`, `fit`, `fit_reason`, `caveats`, `categories` (solo `energia`, `almacenamiento`, `nuclear`, `investigacion`, `consultoria`, `innovacion`), `status` (`cumple` o `por_confirmar`), `url`, `source`, `verified_on` (`AAAA-MM-DD`).
+Madrid: `id`, `org`, `title`, `location`, `modality` (`hibrido`, `remoto`, `presencial`, `no_indicado`), `modality_label`, `hours`, `hours_confirmed`, `pay`, `pay_confirmed`, `deadline`, `start`, `fit`, `fit_reason`, `caveats`, `categories` (solo `energia`, `almacenamiento`, `nuclear`, `investigacion`, `consultoria`, `innovacion`), `status` (`cumple` o `por_confirmar`), `url`, `source`, `verified_on` (`AAAA-MM-DD`), `first_seen` (`AAAA-MM-DD`).
 
-Internacional: `id`, `group`, `country`, `country_label`, `org`, `title`, `location`, `deadline`, `dl_sort` (`AAAA-MM-DD` o `continua`), `start`, `duration`, `pay`, `hours`, `fit`, `status`, `why`, `req`, `url`, `source`.
+Radar: los mismos datos que ya lleva cada fila (`org`, `title`, `why`, `deadline`, `url`) y `first_seen` (`AAAA-MM-DD`).
+
+Internacional: `id`, `group`, `country`, `country_label`, `org`, `title`, `location`, `deadline`, `dl_sort` (`AAAA-MM-DD` o `continua`), `start`, `duration`, `pay`, `hours`, `fit`, `status`, `why`, `req`, `url`, `source`, `first_seen` (`AAAA-MM-DD`).
 
 `id` en minúsculas y guiones, estable entre semanas.
 
 Textos del informe en español, como el resto de la página.
+
+## Etiqueta «Nuevo»
+
+`first_seen` es el día en que la ficha entró en el JSON. En una ficha nueva es la fecha del run (`AAAA-MM-DD`, el mismo día que `updated`). En una ficha que ya existe no se toca, aunque cambien horas, sueldo, plazo o lista.
+
+`scripts/build.py` muestra la etiqueta «Nuevo» en las fichas de Madrid, del radar y de internacional cuando `first_seen` cae en los 7 días naturales que terminan en `updated`: desde `updated` − 6 días hasta `updated`, los dos inclusive. Una ficha de la semana anterior deja de llevarla en el run siguiente. No hace falta otro campo. La cabecera cuenta esas fichas («nuevas en Madrid, radar e internacional») y hay un filtro «Solo nuevas» en Madrid, en el radar y en internacional.
 
 ## Log
 

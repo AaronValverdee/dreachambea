@@ -1,0 +1,811 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Prácticas en Madrid · 25/11/2026</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#1d2433;--mut:#5d6779;--line:#e5e8ef;--acc:#0f766e;--acc2:#2563eb;--warn:#b45309;--ok:#15803d;--red:#b91c1c}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+.hero{background:linear-gradient(135deg,#0f766e 0%,#1e40af 100%);color:#fff;padding:42px 20px 64px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.hero h1{margin:0 0 6px;font-size:clamp(26px,4vw,40px);letter-spacing:-.02em}.hero p{margin:4px 0;opacity:.92}
+.upd{display:inline-block;background:rgba(255,255,255,.16);padding:4px 12px;border-radius:99px;font-size:13px;margin-bottom:14px}
+.crits{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.crit{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:6px 12px;border-radius:99px;font-size:13.5px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:-40px}
+.stat{background:var(--card);border-radius:16px;padding:18px;box-shadow:0 6px 20px rgba(20,30,60,.08)}.stat b{font-size:30px;display:block;color:var(--acc)}.stat span{color:var(--mut);font-size:14px}
+.alert{margin:22px 0 0;background:#fef2f2;border:1px solid #fecaca;color:#7f1d1d;border-radius:14px;padding:14px 18px}
+h2{margin:42px 0 6px;font-size:24px;letter-spacing:-.01em}.sub{color:var(--mut);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 14px;display:flex;flex-direction:column;gap:10px;box-shadow:0 2px 8px rgba(20,30,60,.04);transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(20,30,60,.10)}.card.urgent{border:2px solid #f87171}
+.card header{display:flex;gap:12px;align-items:flex-start}.rank{background:var(--acc);color:#fff;font-weight:700;border-radius:12px;padding:6px 10px;font-size:15px}
+.org{margin:0;color:var(--acc2);font-weight:600;font-size:13.5px}.card h3{margin:2px 0 0;font-size:17px;line-height:1.3}
+.meta{display:flex;flex-wrap:wrap;gap:6px}.chip,.badge{font-size:12px;padding:3px 9px;border-radius:99px;border:1px solid var(--line);background:#f8fafc;color:var(--mut)}
+.badge.ok{background:#ecfdf5;color:var(--ok);border-color:#a7f3d0}.badge.warn{background:#fffbeb;color:var(--warn);border-color:#fde68a}
+.m-hibrido{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}.m-presencial{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe}.m-remoto{background:#ecfeff;color:#0e7490}
+dl{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}dl div{min-width:0}dt{font-size:12px;color:var(--mut)}dd{margin:0;font-size:14px}
+.q{display:inline-block;background:#fde68a;color:#78350f;border-radius:50%;width:16px;height:16px;font-size:11px;text-align:center;line-height:16px;font-weight:700}
+.fit{background:#f0fdfa;border-radius:12px;padding:10px 12px}.fit p{margin:4px 0 0;font-size:13.5px}.fitrow{display:flex;gap:8px;align-items:center;font-size:14px}
+.stars{color:#f59e0b;letter-spacing:2px}.stars .off{color:#d6dae3}
+.cav{margin:0;font-size:13px;color:var(--mut)}
+.card footer{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px dashed var(--line);padding-top:10px}
+.src{font-size:11.5px;color:var(--mut)}.btn{background:var(--acc);color:#fff;text-decoration:none;padding:9px 14px;border-radius:10px;font-weight:600;font-size:14px;white-space:nowrap}.btn:hover{background:#115e59}
+.filters{position:sticky;top:0;z-index:5;background:rgba(246,247,251,.94);backdrop-filter:blur(6px);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:16px}
+.frow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0}.frow label{font-size:13px;color:var(--mut);min-width:86px}
+.filters button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;font-size:13px;cursor:pointer;color:var(--ink)}.filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+#count{font-size:13px;color:var(--mut);margin-left:auto}
+.list{list-style:none;padding:0;margin:0;display:grid;gap:10px}.list li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:3px}
+.list a{color:var(--ink);text-decoration:none}.list a:hover{text-decoration:underline}.list span{color:var(--mut);font-size:14px}.list em{font-size:13px;color:var(--warn);font-style:normal}
+.srcs li{flex-direction:row;gap:10px;align-items:flex-start}.srcs li div{display:flex;flex-direction:column}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}@media(max-width:820px){.two{grid-template-columns:1fr}dl{grid-template-columns:1fr}}
+.legend{font-size:13px;color:var(--mut)}footer.page{color:var(--mut);font-size:13px;text-align:center;padding:40px 20px}
+.navlink{display:inline-block;margin-top:14px;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);padding:7px 14px;border-radius:99px;text-decoration:none;font-size:14px}.navlink:hover{background:rgba(255,255,255,.26)}
+.intl-hero{margin:56px 0 0;background:linear-gradient(135deg,#312e81 0%,#6d28d9 100%);color:#fff;border-radius:22px;padding:26px 26px 22px}
+.intl-hero h2{margin:0 0 6px;color:#fff}.intl-hero p{margin:4px 0;opacity:.93}.lp{display:inline-block;background:#fde68a;color:#78350f;font-weight:700;font-size:12px;padding:3px 10px;border-radius:99px;margin-bottom:10px;letter-spacing:.03em}
+.ibox{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.ibox span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:6px 12px;border-radius:99px;font-size:13.5px}
+.timeline{list-style:none;margin:0;padding:6px 0 0 0;display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;border-top:3px solid #c4b5fd;margin-top:18px}
+.timeline li{flex:0 0 170px;scroll-snap-align:start;padding:10px 12px 4px 0;position:relative}.timeline .tdot{position:absolute;top:-16px;left:0;background:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.15);font-size:14px}
+.timeline li div{display:flex;flex-direction:column;padding-top:12px}.timeline b{font-size:14px;color:#4c1d95}.timeline span{font-size:13px;color:var(--mut)}.timeline .k-dl b{color:var(--red)}
+.ifilters{position:sticky;top:0;z-index:5;background:rgba(246,247,251,.94);backdrop-filter:blur(6px);padding:12px 0;border-bottom:1px solid var(--line);margin:18px 0 6px}
+.ifilters button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;font-size:13px;cursor:pointer;color:var(--ink)}.ifilters button.on{background:#4c1d95;color:#fff;border-color:#4c1d95}.ifilters small{opacity:.7}
+#icount{font-size:13px;color:var(--mut);margin-left:auto}
+.gh{margin:30px 0 4px;font-size:20px}.gh .cnt{background:#ede9fe;color:#5b21b6;border-radius:99px;font-size:13px;padding:2px 9px;vertical-align:middle}
+.icard{border-top:4px solid #8b5cf6}.chip.ctry{background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe}.badge.cont{background:#eef2ff;color:#3730a3;border-color:#c7d2fe}
+.btn2{background:#5b21b6}.btn2:hover{background:#4c1d95}.more{font-size:14px;color:var(--mut);margin:12px 0 0}.more a{color:#5b21b6}
+.dropped{columns:2;font-size:13.5px;color:var(--mut);padding-left:18px}@media(max-width:820px){.dropped{columns:1}}
+</style></head><body>
+<section class="hero"><div class="wrap">
+<span class="upd">Actualizado el 25/11/2026</span>
+<h1>Prácticas y becas en Madrid</h1>
+<p>Ingeniera Química, máster en Ingeniería Nuclear (UPM), experiencia en I+D de almacenamiento de energía (ICMM-CSIC).</p>
+<p>Ofertas abiertas ahora mismo, compatibles con un máster exigente.</p>
+<div class="crits"><span class="crit">Madrid (híbrido &gt; remoto &gt; presencial)</span><span class="crit">Química + energía + investigación</span><span class="crit">≤ 30 h/semana</span><span class="crit">Remuneradas</span><span class="crit">Sin ingeniería de procesos pura</span></div>
+<a class="navlink" href="#intl">🌍 Más abajo: sección internacional (largo plazo) →</a>
+</div></section>
+<main class="wrap">
+<div class="stats">
+<div class="stat"><b>13</b><span>oportunidades verificadas</span></div>
+<div class="stat"><b>4</b><span>cumplen todos los criterios confirmados</span></div>
+<div class="stat"><b>5</b><span>híbridas</span></div>
+<div class="stat"><b>6</b><span>con horas ≤30 h confirmadas</span></div>
+<div class="stat"><b>8</b><span>con remuneración confirmada</span></div>
+</div>
+<div class="alert">⏰ <strong>Urgente:</strong> la plaza de baterías de ion-Na de la UAM (10 h/semana, 600 €/mes) cierra <strong>hoy, 25/11</strong>. Exige tener ya un Máster terminado.</div>
+
+<h2>⭐ Top 5 para aplicar ya</h2>
+<p class="sub">Ordenadas por encaje con su perfil y compatibilidad con el máster. <span class="legend">Un <span class="q">?</span> significa que la oferta no confirma ese dato y conviene preguntarlo.</span></p>
+<div class="grid"><article class="card" data-mod="hibrido" data-cat="energia investigacion" data-status="por_confirmar">
+  <header><span class="rank">#1</span><div><p class="org">Repsol</p><h3>Prácticas Talent Energy 2027 – Primer semestre</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-hibrido">Híbrido</span><span class="chip cat">Energía / renovables</span><span class="chip cat">I+D / investigación</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Campus Repsol (Madrid) o Repsol Technology Lab (Móstoles), entre otras sedes</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Híbrido: hasta 40 % en remoto (según universidad y área)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada variable: la beca cambia según la jornada. Pregunta por media jornada <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>💶 Remuneración</dt><dd>500–900 €/mes según perfil y jornada</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada (anuncio activo hasta 30/06/2027; revisan candidaturas de forma continua)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>Incorporaciones principales en febrero 2027</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Energía con opción de plaza en el Repsol Technology Lab (I+D), remuneración explícita, teletrabajo parcial y flexibilidad para estudios.</p></div>
+  <p class="cav">⚠️ Workday la etiqueta como &#x27;Full time&#x27; aunque el importe depende de la jornada: confirma media jornada en la entrevista. Áreas citadas: data/IA, tecnología, estrategia, sostenibilidad.</p>
+  <footer><span class="src">Fuente: Portal de empleo de Repsol (Workday) · verificado 25/11/2026</span><a class="btn" href="https://repsol.wd3.myworkdayjobs.com/en-US/Repsol/job/Prcticas-Talent-Energy-2027---Primer-Semestre_84151-1" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="no_indicado" data-cat="energia" data-status="por_confirmar">
+  <header><span class="rank">#2</span><div><p class="org">Iberdrola España</p><h3>Programa Prácticas Alumni 2027</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-no_indicado">Sin indicar</span><span class="chip cat">Energía / renovables</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid (y otras sedes en España)</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>No indicada</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Media jornada de mañana (09:00–13:00 según la web de Iberdrola ≈ 20 h/semana)</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta oficial. Confirmar <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada (anuncio activo hasta 30/06/2027)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>Prácticas de febrero a julio de 2027</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>La jornada de mañana es la más compatible con el máster; áreas de renovables, redes, smart grids y O&amp;M.</p></div>
+  <p class="cav">⚠️ Requisitos: matrícula vigente, ≥50 % de créditos aprobados y convenio con la universidad. Workday la marca &#x27;Part time&#x27;.</p>
+  <footer><span class="src">Fuente: Portal de empleo de Iberdrola (Workday) · verificado 25/11/2026</span><a class="btn" href="https://iberdrola.wd3.myworkdayjobs.com/en-US/Iberdrola/job/XMLNAME------Programa-Prcticas-Alumni-2027_R-35158" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="no_indicado" data-cat="energia" data-status="cumple">
+  <header><span class="rank">#3</span><div><p class="org">Naturgy</p><h3>Impulsa 2027 – Programa de Prácticas (ref. 13572)</h3></div></header>
+  <div class="meta"><span class="badge ok">Cumple criterios</span><span class="chip mod m-no_indicado">Sin indicar</span><span class="chip cat">Energía / renovables</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>No indicada</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Part-time (según LinkedIn); horario adaptado a tu disponibilidad e itinerario formativo</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>Ayuda al estudio remunerada (importe no indicado)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada (candidaturas abiertas desde el 2/11)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>1.ª edición: febrero 2027 (unos 6 meses, ampliable)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Programa de prácticas de una energética pensado para compaginar con estudios; admite máster y TFM vinculado.</p></div>
+  <p class="cav">⚠️ Requisitos: último año de grado o máster, ≥50 % de créditos y convenio. El área concreta se asigna en el proceso.</p>
+  <footer><span class="src">Fuente: LinkedIn (oferta de Naturgy); info del programa en naturgy.com/programa-impulso · verificado 25/11/2026</span><a class="btn" href="https://www.linkedin.com/jobs/view/4489556639/" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="presencial" data-cat="investigacion innovacion" data-status="por_confirmar">
+  <header><span class="rank">#4</span><div><p class="org">ACCIONA (negocio de Agua)</p><h3>Beca Apoyo a la Innovación (I+D en plantas piloto)</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-presencial">Presencial</span><span class="chip cat">I+D / investigación</span><span class="chip cat">Innovación</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid, en una EDAR (no se indica cuál)</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Presencial (planta piloto; requiere vehículo propio)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Media jornada o jornada completa, a elegir</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada (Programa de Becas ACCIONA) <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>6 meses, de enero a junio de 2027</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Pide Ingeniería Química explícitamente; investigación aplicada con plantas piloto, muestreo, análisis fisicoquímico y datos experimentales.</p></div>
+  <p class="cav">⚠️ Es tratamiento de aguas, no energía. Necesita vehículo propio para llegar a la EDAR.</p>
+  <footer><span class="src">Fuente: LinkedIn · verificado 25/11/2026</span><a class="btn" href="https://www.linkedin.com/jobs/view/4474286262/" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="hibrido" data-cat="energia innovacion" data-status="cumple">
+  <header><span class="rank">#5</span><div><p class="org">Siemens S.A.</p><h3>WeSTEM: Prácticas para talento femenino STEM – Digital Industries / Smart Infrastructure</h3></div></header>
+  <div class="meta"><span class="badge ok">Cumple criterios</span><span class="chip mod m-hibrido">Híbrido</span><span class="chip cat">Energía / renovables</span><span class="chip cat">Innovación</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Semipresencial (telepráctica)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>5 h/día (25 h/semana), jornada de mañana</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>800 €/mes brutos</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>Febrero 2027</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Cumple todos los requisitos de horas, sueldo y modalidad. Smart Infrastructure trabaja en gestión y control de la energía y permite hacer el TFM, aunque el perfil es más eléctrico o de automatización que químico.</p></div>
+  <p class="cav">⚠️ Programa START (Fundación Universidad-Empresa / Talentoteca). Pide último curso de grado o máster STEM e inglés alto.</p>
+  <footer><span class="src">Fuente: Talentoteca (FUE) · verificado 25/11/2026</span><a class="btn" href="https://www.talentoteca.es/finder/details/72902544/westem-practicas-para-talento-femenino-stem-digital-industries-smart-infrastructure" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article></div>
+
+<h2>Todas las oportunidades</h2>
+<div class="filters">
+<div class="frow"><label>Modalidad</label><button data-f="mod" data-v="all" class="on">Todas</button><button data-f="mod" data-v="hibrido">Híbrido</button><button data-f="mod" data-v="remoto">Remoto</button><button data-f="mod" data-v="presencial">Presencial</button><button data-f="mod" data-v="no_indicado">Sin indicar</button></div>
+<div class="frow"><label>Categoría</label><button data-f="cat" data-v="all" class="on">Todas</button><button data-f="cat" data-v="energia">Energía / renovables</button><button data-f="cat" data-v="almacenamiento">Almacenamiento / baterías</button><button data-f="cat" data-v="nuclear">Nuclear</button><button data-f="cat" data-v="investigacion">I+D / investigación</button><button data-f="cat" data-v="consultoria">Consultoría energética</button><button data-f="cat" data-v="innovacion">Innovación</button></div>
+<div class="frow"><label>Criterios</label><button data-f="st" data-v="all" class="on">Todas</button><button data-f="st" data-v="cumple">Cumplen todo</button><button data-f="st" data-v="por_confirmar">Con datos por confirmar</button><span id="count"></span></div>
+</div>
+<div class="grid" id="all"><article class="card" data-mod="no_indicado" data-cat="energia" data-status="cumple">
+  <header><div><p class="org">Naturgy</p><h3>Impulsa 2027 – Programa de Prácticas (ref. 13572)</h3></div></header>
+  <div class="meta"><span class="badge ok">Cumple criterios</span><span class="chip mod m-no_indicado">Sin indicar</span><span class="chip cat">Energía / renovables</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>No indicada</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Part-time (según LinkedIn); horario adaptado a tu disponibilidad e itinerario formativo</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>Ayuda al estudio remunerada (importe no indicado)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada (candidaturas abiertas desde el 2/11)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>1.ª edición: febrero 2027 (unos 6 meses, ampliable)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Programa de prácticas de una energética pensado para compaginar con estudios; admite máster y TFM vinculado.</p></div>
+  <p class="cav">⚠️ Requisitos: último año de grado o máster, ≥50 % de créditos y convenio. El área concreta se asigna en el proceso.</p>
+  <footer><span class="src">Fuente: LinkedIn (oferta de Naturgy); info del programa en naturgy.com/programa-impulso · verificado 25/11/2026</span><a class="btn" href="https://www.linkedin.com/jobs/view/4489556639/" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="hibrido" data-cat="energia investigacion" data-status="por_confirmar">
+  <header><div><p class="org">Repsol</p><h3>Prácticas Talent Energy 2027 – Primer semestre</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-hibrido">Híbrido</span><span class="chip cat">Energía / renovables</span><span class="chip cat">I+D / investigación</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Campus Repsol (Madrid) o Repsol Technology Lab (Móstoles), entre otras sedes</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Híbrido: hasta 40 % en remoto (según universidad y área)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada variable: la beca cambia según la jornada. Pregunta por media jornada <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>💶 Remuneración</dt><dd>500–900 €/mes según perfil y jornada</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada (anuncio activo hasta 30/06/2027; revisan candidaturas de forma continua)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>Incorporaciones principales en febrero 2027</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Energía con opción de plaza en el Repsol Technology Lab (I+D), remuneración explícita, teletrabajo parcial y flexibilidad para estudios.</p></div>
+  <p class="cav">⚠️ Workday la etiqueta como &#x27;Full time&#x27; aunque el importe depende de la jornada: confirma media jornada en la entrevista. Áreas citadas: data/IA, tecnología, estrategia, sostenibilidad.</p>
+  <footer><span class="src">Fuente: Portal de empleo de Repsol (Workday) · verificado 25/11/2026</span><a class="btn" href="https://repsol.wd3.myworkdayjobs.com/en-US/Repsol/job/Prcticas-Talent-Energy-2027---Primer-Semestre_84151-1" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="no_indicado" data-cat="energia" data-status="por_confirmar">
+  <header><div><p class="org">Iberdrola España</p><h3>Programa Prácticas Alumni 2027</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-no_indicado">Sin indicar</span><span class="chip cat">Energía / renovables</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid (y otras sedes en España)</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>No indicada</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Media jornada de mañana (09:00–13:00 según la web de Iberdrola ≈ 20 h/semana)</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta oficial. Confirmar <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada (anuncio activo hasta 30/06/2027)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>Prácticas de febrero a julio de 2027</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>La jornada de mañana es la más compatible con el máster; áreas de renovables, redes, smart grids y O&amp;M.</p></div>
+  <p class="cav">⚠️ Requisitos: matrícula vigente, ≥50 % de créditos aprobados y convenio con la universidad. Workday la marca &#x27;Part time&#x27;.</p>
+  <footer><span class="src">Fuente: Portal de empleo de Iberdrola (Workday) · verificado 25/11/2026</span><a class="btn" href="https://iberdrola.wd3.myworkdayjobs.com/en-US/Iberdrola/job/XMLNAME------Programa-Prcticas-Alumni-2027_R-35158" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="presencial" data-cat="investigacion innovacion" data-status="por_confirmar">
+  <header><div><p class="org">ACCIONA (negocio de Agua)</p><h3>Beca Apoyo a la Innovación (I+D en plantas piloto)</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-presencial">Presencial</span><span class="chip cat">I+D / investigación</span><span class="chip cat">Innovación</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid, en una EDAR (no se indica cuál)</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Presencial (planta piloto; requiere vehículo propio)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Media jornada o jornada completa, a elegir</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada (Programa de Becas ACCIONA) <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>6 meses, de enero a junio de 2027</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Pide Ingeniería Química explícitamente; investigación aplicada con plantas piloto, muestreo, análisis fisicoquímico y datos experimentales.</p></div>
+  <p class="cav">⚠️ Es tratamiento de aguas, no energía. Necesita vehículo propio para llegar a la EDAR.</p>
+  <footer><span class="src">Fuente: LinkedIn · verificado 25/11/2026</span><a class="btn" href="https://www.linkedin.com/jobs/view/4474286262/" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="hibrido" data-cat="energia innovacion" data-status="cumple">
+  <header><div><p class="org">Siemens S.A.</p><h3>WeSTEM: Prácticas para talento femenino STEM – Digital Industries / Smart Infrastructure</h3></div></header>
+  <div class="meta"><span class="badge ok">Cumple criterios</span><span class="chip mod m-hibrido">Híbrido</span><span class="chip cat">Energía / renovables</span><span class="chip cat">Innovación</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Semipresencial (telepráctica)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>5 h/día (25 h/semana), jornada de mañana</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>800 €/mes brutos</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>Febrero 2027</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Cumple todos los requisitos de horas, sueldo y modalidad. Smart Infrastructure trabaja en gestión y control de la energía y permite hacer el TFM, aunque el perfil es más eléctrico o de automatización que químico.</p></div>
+  <p class="cav">⚠️ Programa START (Fundación Universidad-Empresa / Talentoteca). Pide último curso de grado o máster STEM e inglés alto.</p>
+  <footer><span class="src">Fuente: Talentoteca (FUE) · verificado 25/11/2026</span><a class="btn" href="https://www.talentoteca.es/finder/details/72902544/westem-practicas-para-talento-femenino-stem-digital-industries-smart-infrastructure" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="presencial" data-cat="energia innovacion" data-status="cumple">
+  <header><div><p class="org">ACCIONA Energía (ACCIONA Generación Renovable)</p><h3>Prácticas Innovación</h3></div></header>
+  <div class="meta"><span class="badge ok">Cumple criterios</span><span class="chip mod m-presencial">Presencial</span><span class="chip cat">Energía / renovables</span><span class="chip cat">Innovación</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid (Av. Gran Vía de Hortaleza, 1)</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Presencial (la ficha no indica telepráctica)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>5 h/día (25 h/semana), jornada de mañana</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>650 €/mes brutos</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>Diciembre 2026 (6 meses)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Área de Innovación de renovables: vigilancia de tecnologías emergentes y evaluación de propuestas. Cumple horas y sueldo.</p></div>
+  <p class="cav">⚠️ La ficha pide &#x27;Grado en Negocios Internacionales&#x27;, así que la candidatura de una ingeniera sería atípica. Igualmente vale la pena probar.</p>
+  <footer><span class="src">Fuente: Talentoteca (FUE), programa START · verificado 25/11/2026</span><a class="btn" href="https://www.talentoteca.es/finder/details/87794817/practicas-innovacion" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card urgent" data-mod="presencial" data-cat="almacenamiento investigacion" data-status="cumple">
+  <header><div><p class="org">Universidad Autónoma de Madrid – Dpto. Física de la Materia Condensada</p><h3>Técnico/a de apoyo a la investigación: baterías de ion-Na (PR14/11/2026)</h3></div></header>
+  <div class="meta"><span class="badge ok">Cumple criterios</span><span class="chip mod m-presencial">Presencial</span><span class="chip cat">Almacenamiento / baterías</span><span class="chip cat">I+D / investigación</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Facultad de Ciencias, UAM (Cantoblanco)</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Presencial (laboratorio)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>10 h/semana</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>600 €/mes brutos</dd></div>
+   <div><dt>📅 Plazo</dt><dd>25/11/2026 (cierra HOY)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/01/2027 – 31/05/2027</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Tema muy afín (electrodos de baterías, caracterización electroquímica, AFM, Raman) y solo 10 h/semana. Sin embargo, exige tener ya el título de Máster y piden perfil de Física.</p></div>
+  <p class="cav">⚠️ Solicitud por la Sede Electrónica de la UAM. Solo merece la pena si ya tiene un máster terminado. La UAM publica convocatorias así cada mes, así que conviene vigilar la de diciembre.</p>
+  <footer><span class="src">Fuente: UAM – Ofertas de empleo de investigación (Anexo I, plaza PR14/11/2026) · verificado 25/11/2026</span><a class="btn" href="https://www.uam.es/uam/investigacion/ofertas-empleo/contrato-conjuntanoviembre2026nacional" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="hibrido" data-cat="consultoria energia" data-status="por_confirmar">
+  <header><div><p class="org">Creara, Energy Experts</p><h3>Becario/a proyectos de Eficiencia Energética (2 plazas)</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-hibrido">Híbrido</span><span class="chip cat">Consultoría energética</span><span class="chip cat">Energía / renovables</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Híbrido: 3 días oficina + 2 teletrabajo</dd></div>
+   <div><dt>⏱ Horas</dt><dd>No indicadas (prácticas curriculares o extracurriculares por convenio) <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>💶 Remuneración</dt><dd>Remunerada (importe no indicado)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada (publicada hace ~1 semana)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>6 meses</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Consultoría energética: auditorías, certificados de ahorro (CAE) y medidas de eficiencia. Es híbrido, pero no es investigación.</p></div>
+  <p class="cav">⚠️ Perfil preferente: Industrial, Minas o Energía. Se valoran CE3x y AutoCAD.</p>
+  <footer><span class="src">Fuente: LinkedIn · verificado 25/11/2026</span><a class="btn" href="https://www.linkedin.com/jobs/view/4491509316/" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="hibrido" data-cat="almacenamiento energia" data-status="por_confirmar">
+  <header><div><p class="org">Sonnedix</p><h3>BESS Intern (almacenamiento con baterías)</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-hibrido">Híbrido</span><span class="chip cat">Almacenamiento / baterías</span><span class="chip cat">Energía / renovables</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Híbrido (según la empresa)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>No indicadas (LinkedIn la etiqueta &#x27;Full-time&#x27;) <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada (publicada hace ~2 semanas)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Almacenamiento con baterías: análisis de activos en operación, puesta en marcha y revisiones técnicas.</p></div>
+  <p class="cav">⚠️ Perfil deseado de Ingeniería Eléctrica e inglés fluido. Confirmar horas y bolsa.</p>
+  <footer><span class="src">Fuente: LinkedIn · verificado 25/11/2026</span><a class="btn" href="https://www.linkedin.com/jobs/view/4481245305/" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="hibrido" data-cat="nuclear" data-status="por_confirmar">
+  <header><div><p class="org">Westinghouse Electric Spain</p><h3>Innovative Training Intern (Engineer)</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-hibrido">Híbrido</span><span class="chip cat">Nuclear</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>San Sebastián de los Reyes (Madrid)</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Híbrido (remoto + oficina)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>No indicadas <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>💶 Remuneración</dt><dd>Remunerada (importe no indicado)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>6 meses &#x27;a partir de septiembre&#x27; (el anuncio no dice de qué año)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Sector nuclear, híbrido y remunerada; prepara material de formación y simulación para centrales, no materiales.</p></div>
+  <p class="cav">⚠️ Pide grado en mecánica, eléctrica o energía. Confirma la fecha de inicio: el anuncio podría ser de una edición anterior republicada.</p>
+  <footer><span class="src">Fuente: LinkedIn · verificado 25/11/2026</span><a class="btn" href="https://www.linkedin.com/jobs/view/4438320744/" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="no_indicado" data-cat="almacenamiento consultoria energia" data-status="por_confirmar">
+  <header><div><p class="org">IGNIS</p><h3>Beca en Proyectos Energéticos Industriales</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-no_indicado">Sin indicar</span><span class="chip cat">Almacenamiento / baterías</span><span class="chip cat">Consultoría energética</span><span class="chip cat">Energía / renovables</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>No indicada</dd></div>
+   <div><dt>⏱ Horas</dt><dd>No indicadas (LinkedIn la etiqueta &#x27;Full-time&#x27;) <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada (publicada hace ~2 semanas)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Estudios técnico-económicos de autoconsumo, cogeneración y almacenamiento con baterías (BESS); valoran Python.</p></div>
+  <p class="cav">⚠️ Pide estar cursando Industrial, Energía, Minas o similar. Confirmar horas y bolsa.</p>
+  <footer><span class="src">Fuente: LinkedIn · verificado 25/11/2026</span><a class="btn" href="https://www.linkedin.com/jobs/view/4485846711/" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="presencial" data-cat="energia investigacion" data-status="por_confirmar">
+  <header><div><p class="org">Enertis Applus+</p><h3>Beca Testing – Laboratorio (módulos fotovoltaicos)</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-presencial">Presencial</span><span class="chip cat">Energía / renovables</span><span class="chip cat">I+D / investigación</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Presencial (laboratorio)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>No indicadas (LinkedIn la etiqueta &#x27;Full-time&#x27;) <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada (publicada hace ~2 semanas)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="2 de 5">★★<span class="off">★★★</span></span></div><p>Ensayos de laboratorio de módulos fotovoltaicos y reportes técnicos, con bastante carga administrativa.</p></div>
+  <p class="cav">⚠️ Pide estudiar Eléctrica, Energía o Mecánica e inglés B2.</p>
+  <footer><span class="src">Fuente: LinkedIn · verificado 25/11/2026</span><a class="btn" href="https://www.linkedin.com/jobs/view/4485524017/" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article><article class="card" data-mod="presencial" data-cat="investigacion" data-status="por_confirmar">
+  <header><div><p class="org">FISAIR (control de humedad)</p><h3>Becario/a de desarrollo e investigación (I+D+i)</h3></div></header>
+  <div class="meta"><span class="badge warn">Algún dato por confirmar</span><span class="chip mod m-presencial">Presencial</span><span class="chip cat">I+D / investigación</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Madrid</dd></div>
+   <div><dt>🏠 Modalidad</dt><dd>Presencial</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Horario intensivo de mañana (horas no indicadas) <span class="q" title="No confirmado en la oferta">?</span></dd></div>
+   <div><dt>💶 Remuneración</dt><dd>Prácticas remuneradas (importe no indicado)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicada (publicada el 24/11/2026)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="2 de 5">★★<span class="off">★★★</span></span></div><p>Departamento de I+D+i, pero las tareas son sobre todo documentales (memorias técnicas y subvenciones), en un sector ajeno a la energía.</p></div>
+  <p class="cav">⚠️ Orientada a FP superior o ingeniería mecánica o industrial.</p>
+  <footer><span class="src">Fuente: LinkedIn · verificado 25/11/2026</span><a class="btn" href="https://www.linkedin.com/jobs/view/4493008788/" target="_blank" rel="noopener">Ver y aplicar →</a></footer>
+</article></div>
+
+<div class="two">
+<section><h2>🔭 En el radar (no cumplen todos los criterios)</h2><p class="sub">Interesantes por tema, pero superan las 30 h o piden otro perfil.</p><ul class="list"><li><a href="https://jobs.energy.imdea.org/es/offer/453" target="_blank" rel="noopener"><strong>IMDEA Energía</strong>: Investigador/a predoctoral: reactores nucleares avanzados (SMR) formadores de red (26.76 TN6 PRE)</a><span>Jornada completa (22–25 k€/año), 100 % presencial en Móstoles; exige Máster oficial. Muy afín si se plantea un doctorado.</span><em>Plazo: 01/12/2026</em></li><li><a href="https://web.upm.es/hrs4r/hrs2026480-398-ayudante-de-investigacion-research-assistant" target="_blank" rel="noopener"><strong>UPM – ETSI Minas y Energía</strong>: Ayudante de investigación: recuperación de metales y caracterización de materiales (HRS2026/480-398)</a><span>37,5 h/semana y 28.000 €/año; admite Grado en Ingeniería Química (ICP-OES, FTIR, SEM-EDS).</span><em>Plazo: Web 27/11/2026 (el PDF dice 30/11/2026)</em></li><li><a href="https://www.linkedin.com/posts/ciemat_madrid-ciemat-empleop%C3%BAblico-activity-7528023848034885632-EKuZ" target="_blank" rel="noopener"><strong>CIEMAT</strong>: 4 plazas indefinidas (incl. Materiales y Química EUROfusion; materiales de confinamiento de residuos radiactivos)</a><span>Contrato indefinido a jornada completa; perfil con experiencia.</span><em>Plazo: 27/11/2026</em></li><li><a href="https://www.talentoteca.es/finder/details/04885702/practicas-en-proyectos-ia-madrid" target="_blank" rel="noopener"><strong>Framatome Spain (Pozuelo)</strong>: Prácticas en Proyectos IA (sector nuclear)</a><span>Supera el límite: 7 h/día (35 h). Paga 1.050 €/mes, es semipresencial y empieza en noviembre de 2026.</span><em>Plazo: No indicada</em></li><li><a href="https://www.linkedin.com/jobs/view/4487808298/" target="_blank" rel="noopener"><strong>Enagás</strong>: Beca Ingeniería – Asuntos Regulatorios</a><span>Prefiere Ingeniería Química, pero es a jornada completa (excluida por horas).</span><em>Plazo: No indicada</em></li></ul></section>
+<section><h2>📆 Próximas convocatorias a vigilar</h2><p class="sub">Programas con el formato ideal que ahora están cerrados o requieren su acceso.</p><ul class="list"><li><a href="https://sede.csic.gob.es/tramites/programa-jae/jae-intro-2026" target="_blank" rel="noopener"><strong>CSIC – JAE Intro</strong></a><span>Formato ideal: 20 h/semana, 600 €/mes, 7 meses en un instituto CSIC (ICMM, ICP…). La edición 2026 estuvo abierta del 12/03 al 11/04/2026, así que la de 2027 se espera hacia marzo (sin confirmar).</span></li><li><a href="https://energia.imdea.org/imdea-energia-lanza-30-becas-para-practicas-de-estudiantes-de-grado-y-master-2027/" target="_blank" rel="noopener"><strong>IMDEA Energía – Prácticas 2027</strong></a><span>30 becas de hasta 350 h y hasta 2.500 € para máster. Cerró el 07/11/2026 y vuelve cada otoño.</span></li><li><a href="https://jobs.materials.imdea.org/internship" target="_blank" rel="noopener"><strong>IMDEA Materiales – Research Initiation Fellowship</strong></a><span>3 meses en un grupo de investigación. La convocatoria abre en primavera; ahora mismo no hay vacantes de prácticas.</span></li><li><a href="https://www.uam.es/uam/investigacion/ofertas-empleo/contrato-conjuntanoviembre2026nacional" target="_blank" rel="noopener"><strong>UAM – Convocatorias conjuntas mensuales</strong></a><span>En noviembre hubo plazas parciales de 10–20 h/semana. Vigila la convocatoria de diciembre.</span></li><li><a href="https://www.upm.es/" target="_blank" rel="noopener"><strong>UPM – COIE (plataforma de prácticas)</strong></a><span>Requiere su usuario UPM: no se pudo revisar desde fuera. Muy recomendable que entre ella.</span></li></ul></section>
+</div>
+
+<section id="intl">
+<div class="intl-hero"><span class="lp">LARGO PLAZO · FUERA DE MADRID</span>
+<h2>🌍 Internacional (largo plazo)</h2>
+<p>Opciones para el periodo de prácticas o el TFM del máster, no para compaginar ahora: casi todas son <strong>a jornada completa y presenciales</strong>, así que no cumplen el criterio de ≤30 h de la parte de Madrid.</p>
+<p>Se han vuelto a comprobar todos los enlaces el 25/11/2026. Las ofertas cerradas o retiradas se han quitado (lista al final de la sección).</p>
+<div class="ibox"><span><b>31</b> oportunidades</span><span><b>26</b> abiertas ahora</span><span>Próximo cierre: <b>ITER, 13/12/2026</b></span><span>Luego: <b>CERN Summer, 21/01/2027</b></span></div>
+</div>
+<h3 class="gh">🗓️ Calendario de plazos</h3>
+<ul class="timeline"><li class="k-dl"><span class="tdot">⏳</span><div><b>13/12/2026</b><span>Cierra la ola 1 de prácticas de ITER</span></div></li><li class="k-open"><span class="tdot">🟢</span><div><b>Mediados de dic. 2026</b><span>Abren las solicitudes del PSI Summer Student 2027</span></div></li><li class="k-dl"><span class="tdot">⏳</span><div><b>21/01/2027</b><span>Cierra el CERN Summer Student Programme 2027</span></div></li><li class="k-start"><span class="tdot">🚀</span><div><b>Febrero 2027</b><span>Inicio de la mayoría de las prácticas en Francia (CEA, ASNR)</span></div></li><li class="k-dl"><span class="tdot">⏳</span><div><b>01–28/03/2027</b><span>Ola 2 de prácticas de ITER</span></div></li><li class="k-info"><span class="tdot">ℹ️</span><div><b>Abril 2027</b><span>Resolución del PSI Summer Student</span></div></li><li class="k-start"><span class="tdot">🚀</span><div><b>14/06/2027</b><span>Inicio ideal del CERN Summer Student</span></div></li><li class="k-start"><span class="tdot">🚀</span><div><b>02/07–20/08/2027</b><span>Programa central del PSI Summer Student</span></div></li><li class="k-dl"><span class="tdot">⏳</span><div><b>01/11/2027</b><span>Cierra el CERN Short Term Internship (abierto todo el año)</span></div></li></ul>
+<div class="ifilters"><div class="frow"><label>País</label><button data-c="all" class="on">Todos</button><button data-c="FR">🇫🇷 Francia <small>24</small></button><button data-c="CH">🇨🇭 Suiza <small>5</small></button><button data-c="BE">🇧🇪 Bélgica <small>1</small></button><button data-c="US">🇺🇸 EE. UU. <small>1</small></button><span id="icount"></span></div></div>
+<h3 class="gh">🎓 Programas estructurados con plazo <span class="cnt">5</span></h3><p class="sub">Convocatorias oficiales con fechas. Son las primeras que hay que tener en el calendario.</p><div class="grid"><article class="card icard" data-country="FR">
+  <header><div><p class="org">ITER Organization</p><h3>Internships 2027 (Categoría A: estudiantes de máster)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 ITER · Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Saint-Paul-lez-Durance (Provenza)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>Ola 1: hasta 13/12/2026 · Ola 2: 01–28/03/2027</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>A acordar en la entrevista (indicarlo en la carta)</dd></div>
+   <div><dt>⌛ Duración</dt><dd>Hasta 6 meses (ampliable a 1 año)</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la web oficial</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="5 de 5">★★★★★<span class="off"></span></span></div><p>Fusión: hay temas de ingeniería, ciencia y seguridad. Se pueden elegir hasta 5 temas.</p></div>
+  <p class="cav">📋 Estar matriculada durante las prácticas, pasaporte de un miembro de ITER (UE ✔), inglés fluido. Carta con fechas disponibles y documento de nacionalidad (DNI/pasaporte).</p>
+  <footer><span class="src">Fuente: iter.org + anuncio ITER (plazo de la ola 1) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.iter.org/public/jobs/internships" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="CH">
+  <header><div><p class="org">Paul Scherrer Institut (PSI)</p><h3>Summer Student Programme 2027</h3></div></header>
+  <div class="meta"><span class="badge warn">Abre pronto</span><span class="chip ctry">🇨🇭 Suiza</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Villigen</dd></div>
+   <div><dt>📅 Plazo</dt><dd>Abre a mediados de diciembre de 2026 (fecha de cierre no indicada)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>Programa central: 02/07–20/08/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>Normalmente 8–12 semanas</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Presencial</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Tiene un centro de Ingeniería y Ciencias Nucleares y otro de Energía y Medio Ambiente. Encaja con su máster.</p></div>
+  <p class="cav">📋 Grado completo y matriculada en un máster (✔). Solo se puede solicitar un centro. CV de 2 páginas y carta de 1 página. Resolución en abril de 2027.</p>
+  <footer><span class="src">Fuente: psi.ch · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.psi.ch/en/summerstudents/how-to-apply" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="CH">
+  <header><div><p class="org">CERN</p><h3>Summer Student Programme 2027</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇨🇭 Suiza</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Ginebra</dd></div>
+   <div><dt>📅 Plazo</dt><dd>21/01/2027 23:59 (hora de Ginebra)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>Ideal 14/06/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>2 meses</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>94 CHF/día netos (dieta de manutención) + seguro + viaje</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Presencial a tiempo completo</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Programa de verano muy reconocido. Encaja con el calendario del máster (verano).</p></div>
+  <p class="cav">📋 Estudiante de grado o máster (no doctorado) con ≥6 semestres cursados. No haber estado antes en CERN más de 3 meses ni en este programa. Inglés.</p>
+  <footer><span class="src">Fuente: careers.cern · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://careers.cern/jobs/cern-summer-student-programme-2026-member-and-non-member-state/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="CH">
+  <header><div><p class="org">CERN</p><h3>Short Term Internship 2027 – Chemical, Materials &amp; Process Engineering</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇨🇭 Suiza</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Ginebra</dd></div>
+   <div><dt>📅 Plazo</dt><dd>01/11/2027 23:59 (abierta todo el año)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>A acordar</dd></div>
+   <div><dt>⌛ Duración</dt><dd>1 a 6 meses</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>1.593 CHF/mes</dd></div>
+   <div><dt>⏱ Horas</dt><dd>40 h/semana, presencial</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Rama química y materiales del CERN: encaja de lleno con su perfil de IQ.</p></div>
+  <p class="cav">📋 Nacional de un Estado miembro (España ✔), seguir matriculada a tiempo completo y que la universidad pida o recomiende prácticas. Inglés o francés.</p>
+  <footer><span class="src">Fuente: LinkedIn (oferta publicada por CERN) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4485077982/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="BE">
+  <header><div><p class="org">SCK CEN (centro belga de investigación nuclear)</p><h3>Temas de TFM y prácticas (convocatoria continua)</h3></div></header>
+  <div class="meta"><span class="badge cont">Continua / contacto</span><span class="chip ctry">🇧🇪 Bélgica</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Mol</dd></div>
+   <div><dt>📅 Plazo</dt><dd>Sin plazo indicado (temas publicados de forma continua)</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada</dd></div>
+   <div><dt>⏱ Horas</dt><dd>No indicadas</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Catálogo de temas. Por ejemplo: &#x27;matrices cementicias para inmovilizar residuos orgánicos&#x27; y &#x27;radiofarmacia&#x27;. Química nuclear pura.</p></div>
+  <p class="cav">📋 Se solicita tema a tema desde el catálogo.</p>
+  <footer><span class="src">Fuente: sckcen.be · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.sckcen.be/en/thesis-and-internship-topics" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article></div><h3 class="gh">🇫🇷 Prácticas (stages) en Francia con inicio en 2027 <span class="cnt">23</span></h3><p class="sub">Ofertas concretas de CEA, ASNR, Framatome, EDF y Orano. Casi todas empiezan entre enero y abril de 2027 y duran unos 6 meses. Ordenadas por encaje.</p><div class="grid"><article class="card icard" data-country="FR">
+  <header><div><p class="org">ASNR (autoridad de seguridad nuclear y protección radiológica)</p><h3>Nuevos adsorbentes para capturar CH₃I en contexto nuclear</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Essonne (Saclay, Île-de-France)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="5 de 5">★★★★★<span class="off"></span></span></div><p>Ingeniería química pura: adsorción, lecho fijo, curvas de ruptura y comparación con carbón activo.</p></div>
+  <p class="cav">📋 Francés e inglés de nivel profesional. Bac+5 (máster).</p>
+  <footer><span class="src">Fuente: LinkedIn (ASNR) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4485731051/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">CEA Saclay</p><h3>Caracterizar efectos de irradiación en un acero para reactores de IV generación (M2, 6 meses)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Saclay (Île-de-France)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/02/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>6 meses</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="5 de 5">★★★★★<span class="off"></span></span></div><p>Materiales bajo irradiación. Enlaza su experiencia en I+D de materiales con el máster nuclear.</p></div>
+  <p class="cav">📋 Máster 2 o último año de escuela de ingeniería.</p>
+  <footer><span class="src">Fuente: emploi.cea.fr · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.emploi.cea.fr/offre-de-emploi/emploi-stage-m2-6-mois-caracterisation-des-effets-d-irradiation-dans-un-acier-pour-la-ive-generation-h-f_42060.aspx" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">CEA Marcoule</p><h3>Radioquímica: radiólisis de fases orgánicas (PUREX/monoamidas) con uranio</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Bagnols-sur-Cèze (Occitania)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>15/02/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="5 de 5">★★★★★<span class="off"></span></span></div><p>Química del ciclo del combustible con espectroscopía avanzada: encaja con IQ y nuclear.</p></div>
+  <p class="cav">📋 Bac+5 en química, fisicoquímica o radioquímica.</p>
+  <footer><span class="src">Fuente: LinkedIn (CEA) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4478146915/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">Framatome</p><h3>Oxidación de acero inoxidable en medio primario de reactor de agua a presión (corrosión bajo tensión y MEB)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Le Creusot (Borgoña)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="5 de 5">★★★★★<span class="off"></span></span></div><p>Corrosión y caracterización de materiales en entorno industrial nuclear.</p></div>
+  <p class="cav">📋 Bac+5 con especialidad en materiales. Base de metalurgia.</p>
+  <footer><span class="src">Fuente: LinkedIn (Framatome) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4471514912/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">ASNR</p><h3>Ingeniera de estudios en química: extraer y medir yodo-129 por ICP-MS/MS</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Le Vésinet (Île-de-France)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Desarrollo y validación de un método analítico (norma NF T 90-210). Química aplicada a la protección radiológica ambiental.</p></div>
+  <p class="cav">📋 Perfil de química o radioquímica.</p>
+  <footer><span class="src">Fuente: LinkedIn (ASNR) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4484684372/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">ASNR</p><h3>Integridad del recubrimiento de cromo en vainas de combustible (combustibles tolerantes a accidentes)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Cadarache (Bocas del Ródano)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Materiales de combustible avanzado. La ficha de LinkedIn tiene poco detalle.</p></div>
+  <p class="cav">📋 No detallados en la ficha.</p>
+  <footer><span class="src">Fuente: LinkedIn (ASNR) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4486042715/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">CEA Cadarache (IRESNE)</p><h3>Desarrollar un experimento para medir el punto de fusión del combustible (cerámicas nucleares)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Saint-Paul-lez-Durance</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/02/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Experimental: láser y pirometría sobre cerámicas nucleares. Posible tesis después.</p></div>
+  <p class="cav">📋 Máster 2.</p>
+  <footer><span class="src">Fuente: emploi.cea.fr · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.emploi.cea.fr/offre-de-emploi/emploi-stage-developpement-d-une-experience-pour-la-mesure-du-point-de-fusion-du-combustible-h-f_42311.aspx" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">CEA Marcoule</p><h3>Ingeniera radioquímica: extracción de U(IV)/Th(IV) con TBP (PUREX, PAREX+)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Chusclan / Marcoule</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/02/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Extracción líquido-líquido: operación unitaria clásica de IQ aplicada al reciclado.</p></div>
+  <p class="cav">📋 ⚠️ La oferta pide francés nativo.</p>
+  <footer><span class="src">Fuente: emploi.cea.fr · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.emploi.cea.fr/offre-de-emploi/emploi-stage-ingenieur-radiochimiste-h-f_41916.aspx" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">Framatome (Cadarache)</p><h3>Permeación y desgasificación de tritio en materiales</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Cadarache</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Transporte de especies en materiales: fenómenos de transporte de IQ aplicados a fusión y fisión.</p></div>
+  <p class="cav">📋 Ver la oferta.</p>
+  <footer><span class="src">Fuente: framatome-career (TalentSoft) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://framatome-career.talent-soft.com/offre-de-emploi/emploi-stage-etude-de-la-permeation-et-du-degazage-du-tritium-dans-les-materiaux-f-h_27933.aspx" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">EDF (División de Combustible Nuclear)</p><h3>Tasa de dosis de los combustibles gastados para almacenamiento geológico (TRIPOLI-4 / ARCANES)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Saint-Denis (París)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>Primer semestre de 2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>4–6 meses</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>Rango que muestra LinkedIn: 935–1.682 € (periodo poco claro en la ficha)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Residuos y ciclo del combustible con cálculo Monte Carlo y Python.</p></div>
+  <p class="cav">📋 Bac+5 en curso. Neutrónica y protección radiológica, Python/C++.</p>
+  <footer><span class="src">Fuente: LinkedIn (EDF) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4488897442/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">Institut de la Corrosion + Andra</p><h3>Sensores de corrosión ER para almacenamiento geológico de residuos (Cigéo)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Brest (Bretaña)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>Enero–marzo de 2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>5–6 meses</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Corrosión y electroquímica aplicada a residuos radiactivos.</p></div>
+  <p class="cav">📋 Máster 2 o escuela de ingeniería. Química, materiales o corrosión.</p>
+  <footer><span class="src">Fuente: LinkedIn (Institut de la Corrosion) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4488173109/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">ASNR</p><h3>Relocalización de fragmentos de combustible en accidente con pérdida de refrigerante (APRP)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Saint-Paul-lez-Durance</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Seguridad del combustible: metalografía y análisis de fragmentos.</p></div>
+  <p class="cav">📋 Ver la oferta.</p>
+  <footer><span class="src">Fuente: LinkedIn (ASNR) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4485598656/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">ASNR</p><h3>Tratamiento de imágenes de tomografía X de betún irradiado (residuos)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Francia (ver la oferta)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/02/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Residuos bituminosos y caracterización por imagen.</p></div>
+  <p class="cav">📋 Ver la oferta.</p>
+  <footer><span class="src">Fuente: asnr-career (TalentSoft) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://asnr-career.talent-soft.com/offre-de-emploi/emploi-stage-traitement-d-images-tomox-du-bitume-irradie-h-f_1767.aspx" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">ASNR</p><h3>Caracterizar balizas de espectrometría gamma (red Téléray)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Francia (ver la oferta)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/02/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Vigilancia radiológica del entorno.</p></div>
+  <p class="cav">📋 Ver la oferta.</p>
+  <footer><span class="src">Fuente: asnr-career (TalentSoft) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://asnr-career.talent-soft.com/offre-de-emploi/emploi-stage-caracterisation-et-qualification-de-balises-de-spectrometrie-gamma-de-l-asnr-reseau-teleray-h-f_1787.aspx" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">ASNR</p><h3>Irradiación de iones a muy alta tasa en el microhaz MIRCOM (efecto FLASH)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Cadarache</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/02/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Física de radiaciones e instrumentación (Geant4, SRIM).</p></div>
+  <p class="cav">📋 Francés e inglés avanzados.</p>
+  <footer><span class="src">Fuente: LinkedIn (ASNR) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4486053038/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">CEA Cadarache (IRESNE)</p><h3>Análisis de incertidumbres en simulaciones de combustible (MOX, modelos sustitutos con ML)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Saint-Paul-lez-Durance</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/01/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Modelización del combustible con aprendizaje automático.</p></div>
+  <p class="cav">📋 Francés fluido, inglés intermedio.</p>
+  <footer><span class="src">Fuente: emploi.cea.fr · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.emploi.cea.fr/offre-de-emploi/emploi-stage-methodologie-d-analyse-des-incertitudes-dans-les-simulations-des-combustibles-nucleaires-h-f_41667.aspx" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">CEA Cadarache (IRESNE)</p><h3>Estudio neutrónico del reactor CABRI (TRIPOLI-4)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Saint-Paul-lez-Durance</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/02/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Neutrónica pura, muy alineada con el máster.</p></div>
+  <p class="cav">📋 Máster 2 nuclear.</p>
+  <footer><span class="src">Fuente: emploi.cea.fr · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.emploi.cea.fr/offre-de-emploi/emploi-stage-etude-neutronique-du-reacteur-nucleaire-cabri-h-f_42431.aspx" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">CEA Cadarache</p><h3>Seguridad-criticidad: aprovechar mejor la validación experimental</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Saint-Paul-lez-Durance</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/03/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Criticidad y validación con experimentos.</p></div>
+  <p class="cav">📋 Máster 2 en física nuclear o 3.º de escuela de ingeniería.</p>
+  <footer><span class="src">Fuente: LinkedIn (CEA) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4473351256/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">CEA Cadarache</p><h3>Seguridad nuclear en desmantelamiento (INB 37B y 52)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Saint-Paul-lez-Durance</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/04/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Análisis de seguridad en instalaciones reales.</p></div>
+  <p class="cav">📋 Máster 1 o 2 en seguridad nuclear o gestión de riesgos.</p>
+  <footer><span class="src">Fuente: LinkedIn (CEA) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4478461255/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">CEA Cadarache</p><h3>Modelización neutrónica determinista del calor residual (6 meses)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Saint-Paul-lez-Durance</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+   <div><dt>⌛ Duración</dt><dd>6 meses</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Neutrónica aplicada a la seguridad.</p></div>
+  <p class="cav">📋 No detallados en la ficha.</p>
+  <footer><span class="src">Fuente: LinkedIn (CEA) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4480223774/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">CEA Cadarache (IRESNE)</p><h3>Modelización numérica de la magnetoconvección en mantos regeneradores de tritio (fusión)</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Saint-Paul-lez-Durance</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>01/02/2027</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>CFD con OpenFOAM para fusión. Mecánica de fluidos y transmisión de calor.</p></div>
+  <p class="cav">📋 Bac+5 en mecánica de fluidos o CFD.</p>
+  <footer><span class="src">Fuente: LinkedIn (CEA) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4486764781/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">Orano</p><h3>Diseño de embalaje de transporte de combustible: neutrónica y criticidad</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Montigny-le-Bretonneux (París)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>Gratificación &#x27;atractiva&#x27; (importe no indicado)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Presencial con 1 día de teletrabajo por semana</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Seguridad-criticidad en transporte (APOLLO2, CRISTAL, TRIPOLI-4).</p></div>
+  <p class="cav">📋 Último año de ingeniería o Máster 2 en neutrónica o criticidad.</p>
+  <footer><span class="src">Fuente: LinkedIn (Orano) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4484386115/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="FR">
+  <header><div><p class="org">Framatome</p><h3>I+D en tratamiento de superficies y fabricación aditiva metálica</h3></div></header>
+  <div class="meta"><span class="badge ok">Abierta</span><span class="chip ctry">🇫🇷 Francia</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Romans-sur-Isère</dd></div>
+   <div><dt>📅 Plazo</dt><dd>No indicado</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>No indicado</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada en la oferta (en Francia la gratificación es obligatoria en prácticas de más de 2 meses)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Jornada completa presencial (no indicada)</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Materiales y procesado en la fábrica de combustible.</p></div>
+  <p class="cav">📋 Bac+5 en materiales metálicos.</p>
+  <footer><span class="src">Fuente: LinkedIn (Framatome) · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.linkedin.com/jobs/view/4470001754/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article></div><p class="more">📚 Más temas en catálogos: <a href="https://www-dam.cea.fr/dam/wp-content/uploads/2026/10/Livret.StagesDAM.2027.pdf" target="_blank" rel="noopener">CEA DAM: catálogo de prácticas 2027 (PDF)</a> · <a href="https://www.cea.fr/energies/iresne/Documents/6%20Carri%C3%A8re/Offres%20de%20stages%20IRESNE%202027%20-%20Fr%20&amp;%20Eng.pdf" target="_blank" rel="noopener">CEA IRESNE: ofertas de prácticas 2027, FR/EN (PDF)</a></p><h3 class="gh">✉️ Vía contacto directo <span class="cnt">3</span></h3><p class="sub">Sin convocatoria: se consigue escribiendo a un laboratorio o profesor con CV y propuesta de TFM.</p><div class="grid"><article class="card icard" data-country="CH">
+  <header><div><p class="org">EPFL – Laboratory for Reactor Physics and Systems Behaviour (LRS)</p><h3>Estancia como visiting student para TFM o prácticas</h3></div></header>
+  <div class="meta"><span class="badge cont">Continua / contacto</span><span class="chip ctry">🇨🇭 Suiza</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Lausana</dd></div>
+   <div><dt>📅 Plazo</dt><dd>Sin convocatoria: contacto directo con el laboratorio</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>A acordar</dd></div>
+   <div><dt>⌛ Duración</dt><dd>2–12 meses en el campus</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Presencial</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>Ahora el LRS remite a sus páginas de proyectos de máster. La vía es escribir a un profesor con propuesta y CV.</p></div>
+  <p class="cav">📋 Seguir matriculada en la UPM y que la UPM reconozca el proyecto. Supervisión de un profesor de la EPFL. Sin matrícula. (Summer@EPFL es solo para informática e ingeniería eléctrica.)</p>
+  <footer><span class="src">Fuente: epfl.ch · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.epfl.ch/labs/lrs/project-proposals-for-students/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="CH">
+  <header><div><p class="org">PSI – Laboratory for Nuclear Materials (LNM)</p><h3>TFM en materiales nucleares (contactar con el laboratorio)</h3></div></header>
+  <div class="meta"><span class="badge cont">Continua / contacto</span><span class="chip ctry">🇨🇭 Suiza</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Villigen</dd></div>
+   <div><dt>📅 Plazo</dt><dd>Sin convocatoria: contacto directo</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>A acordar</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Presencial</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="4 de 5">★★★★<span class="off">★</span></span></div><p>TFM anteriores sobre vainas de Zr, aceros ODS, corrosión bajo tensión y química de geles: encaja con IQ y materiales.</p></div>
+  <p class="cav">📋 La página solo lista TFM pasados. Hay que escribir al laboratorio con una propuesta.</p>
+  <footer><span class="src">Fuente: psi.ch · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://www.psi.ch/en/lnm/list-of-master-theses" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article><article class="card icard" data-country="US">
+  <header><div><p class="org">MIT – Nuclear Science &amp; Engineering</p><h3>Visiting student por invitación de un profesor</h3></div></header>
+  <div class="meta"><span class="badge cont">Continua / contacto</span><span class="chip ctry">🇺🇸 EE. UU.</span></div>
+  <dl>
+   <div><dt>📍 Lugar</dt><dd>Cambridge (Massachusetts)</dd></div>
+   <div><dt>📅 Plazo</dt><dd>Sin convocatoria: requiere invitación de un profesor</dd></div>
+   <div><dt>🚀 Inicio</dt><dd>A acordar</dd></div>
+   <div><dt>⌛ Duración</dt><dd>No indicada</dd></div>
+   <div><dt>💶 Remuneración</dt><dd>No indicada (el ISO publica costes estimados que corren a cargo del estudiante o su financiación)</dd></div>
+   <div><dt>⏱ Horas</dt><dd>Presencial</dd></div>
+  </dl>
+  <div class="fit"><div class="fitrow"><strong>Encaje</strong> <span class="stars" aria-label="3 de 5">★★★<span class="off">★★</span></span></div><p>Grupos afines a materiales y energía: Michael Short (materiales bajo irradiación) y Ju Li (materiales y energía).</p></div>
+  <p class="cav">📋 La invitación sale del profesor. Hace falta visado J-1 y acreditar fondos (ver FAQ del ISO).</p>
+  <footer><span class="src">Fuente: iso.mit.edu · nse.mit.edu · enlace comprobado 25/11/2026</span><a class="btn btn2" href="https://iso.mit.edu/getting-started/visiting-students-faq/" target="_blank" rel="noopener">Ver oferta →</a></footer>
+</article></div><p class="more">👤 Perfiles para escribir: <a href="https://nse.mit.edu/people/michael-short/" target="_blank" rel="noopener">MIT NSE: Michael Short</a> · <a href="https://nse.mit.edu/people/ju-li/" target="_blank" rel="noopener">MIT NSE: Ju Li</a></p>
+<div class="two">
+<section><h2>📆 Convocatorias internacionales a vigilar</h2><p class="sub">Programas cerrados ahora o con una segunda ronda.</p><ul class="list"><li><a href="https://fusionforenergy.europa.eu/traineeships/" target="_blank" rel="noopener"><strong>F4E Traineeships (Barcelona, Cadarache o Garching)</strong></a><span>Ahora cerrada. Beca de 1.400 €/mes en Barcelona, para titulados y teletrabajo parcial. Próxima convocatoria: fecha no publicada.</span></li><li><a href="https://careers.cern/programmes/technical-studentship/" target="_blank" rel="noopener"><strong>CERN Technical Studentship</strong></a><span>Ahora mismo no hay plazas abiertas en ninguna área. Próxima ronda: fecha no publicada.</span></li><li><a href="https://recruitment.jrc.ec.europa.eu/graduate-trainees" target="_blank" rel="noopener"><strong>JRC Traineeships (Comisión Europea)</strong></a><span>La última convocatoria cerró el 28/10/2026. Próxima: fecha no publicada.</span></li><li><a href="https://www.iter.org/public/jobs/internships" target="_blank" rel="noopener"><strong>ITER, ola 2</strong></a><span>Se abrirá del 01/03 al 28/03/2027 con nuevos temas.</span></li></ul></section>
+<section><h2>🗑️ Descartadas al revisar</h2><p class="sub">Cerradas, retiradas o fuera de su perfil (comprobado el 25/11/2026).</p><ul class="dropped"><li>CERN Technical Studentship 2027-1 (cerró el 16/10/2026)</li><li>JRC Traineeships (cerró el 28/10/2026)</li><li>F4E Traineeships (cerrada)</li><li>IMDEA Energía prácticas 2027 (cerró el 07/11)</li><li>X-energy (EE. UU.; exige permiso de trabajo estadounidense)</li><li>CEA: semiconductores bajo radiación (_41893) y residuos vítreos de Marcoule (_42300): oferta retirada</li><li>EDF DP2D Lyon, protección radiológica (404)</li><li>Orano, cálculos de protección radiológica en Cherbourg (404)</li><li>ASNR, criticidad SILENE (oferta inexistente)</li><li>newcleo Lyon (404)</li><li>CEA Cadarache: alternancia en protección radiológica (exige contrato de aprendiz en Francia)</li></ul></section>
+</div>
+</section>
+
+<h2>🔎 Fuentes revisadas</h2>
+<p class="sub">Todos los enlaces de esta página se comprobaron el 25/11/2026. No se ha inventado ningún dato: lo que la oferta no dice aparece como "no indicado".</p>
+<ul class="list srcs"><li><span class="si">✅</span><div><strong>LinkedIn (búsqueda pública, últimos 30 días, Madrid)</strong><span>~30 búsquedas: prácticas/becario/beca + energía, I+D, investigación, química, hidrógeno, baterías, materiales, nuclear… Luego bloqueó por exceso de peticiones (429) y se completó con lecturas sueltas.</span></div></li><li><span class="si">✅</span><div><strong>Talentoteca / FUE (programa START)</strong><span>120 prácticas de Madrid revisadas una a una (horas y bolsa).</span></div></li><li><span class="si">✅</span><div><strong>Repsol, Iberdrola (Workday)</strong><span>Ofertas leídas directamente del portal.</span></div></li><li><span class="si">🟡</span><div><strong>Naturgy, ACCIONA, Moeve, IDOM, Enagás, Endesa, Redeia</strong><span>Moeve: su buscador no carga sin navegador; solo se leyeron ofertas sueltas, ninguna afín. IDOM: la beca nuclear es en Bilbao.</span></div></li><li><span class="si">✅</span><div><strong>IMDEA Energía, IMDEA Materiales</strong><span>Sin prácticas abiertas; solo predoctorales y puestos a jornada completa.</span></div></li><li><span class="si">🟡</span><div><strong>CIEMAT, CSN, Enresa, Tecnatom</strong><span>Sin becas abiertas para estudiantes (CSN: última convocatoria en 2024). La web de empleo del CIEMAT no respondió.</span></div></li><li><span class="si">✅</span><div><strong>CSIC (JAE Intro, ICMM)</strong><span>JAE Intro 2026 cerrada; el ICMM no tiene vacantes técnicas de estudiante.</span></div></li><li><span class="si">✅</span><div><strong>UAM, UPM (HRS4R), UC3M</strong><span>UAM: plaza de baterías a 10 h. UPM y UC3M: solo plazas a jornada completa.</span></div></li><li><span class="si">✅</span><div><strong>Becas Santander, Becas de colaboración</strong><span>Cerradas para 2026-27.</span></div></li><li><span class="si">⛔</span><div><strong>InfoJobs, Indeed, Euraxess, UPM COIE</strong><span>No revisados a fondo (antibots o requieren inicio de sesión).</span></div></li></ul>
+</main>
+<footer class="page">Informe preparado por Dreachambea · 25/11/2026</footer>
+<script>
+const st={mod:'all',cat:'all',st:'all'};
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+ const f=b.dataset.f;st[f]=b.dataset.v;document.querySelectorAll(`.filters button[data-f="${f}"]`).forEach(x=>x.classList.toggle('on',x===b));apply();}));
+function apply(){let n=0;document.querySelectorAll('#all .card').forEach(c=>{
+ const ok=(st.mod==='all'||c.dataset.mod===st.mod)&&(st.cat==='all'||c.dataset.cat.split(' ').includes(st.cat))&&(st.st==='all'||c.dataset.status===st.st);
+ c.style.display=ok?'':'none';if(ok)n++;});document.getElementById('count').textContent=n+' de 13 visibles';}
+apply();
+let ic='all';document.querySelectorAll('.ifilters button').forEach(b=>b.addEventListener('click',()=>{ic=b.dataset.c;document.querySelectorAll('.ifilters button').forEach(x=>x.classList.toggle('on',x===b));iapply();}));
+function iapply(){let n=0;document.querySelectorAll('#intl .icard').forEach(c=>{const ok=ic==='all'||c.dataset.country===ic;c.style.display=ok?'':'none';if(ok)n++;});
+document.querySelectorAll('#intl .gh').forEach(h=>{const g=h.nextElementSibling&&h.nextElementSibling.nextElementSibling;if(g&&g.classList.contains('grid')){const v=[...g.children].some(c=>c.style.display!=='none');h.style.display=v?'':'none';h.nextElementSibling.style.display=v?'':'none';}});
+document.getElementById('icount').textContent=n+' de 31 visibles';}
+iapply();
+</script></body></html>

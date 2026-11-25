@@ -229,7 +229,7 @@ def tracker_controls(cid):
     </select>
     <button type="button" class="trk-note-btn" data-id="{H(cid)}" title="Añadir o ver mis notas">📝 Nota</button>
   </div>
-  <div class="trk-note-wrap" id="note-wrap-{H(cid)}" style="display:none">
+  <div class="trk-note-wrap" style="display:none">
     <textarea class="trk-note" data-id="{H(cid)}" rows="2" placeholder="Escribe aquí tus notas (ej. fecha de solicitud, contacto de RR. HH., respuesta sobre horario...)"></textarea>
   </div>
 </div>'''
@@ -561,7 +561,7 @@ dl{{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}}dl div{{mi
 
 .card footer{{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px dashed var(--line);padding-top:10px}}
 .src{{font-size:11.5px;color:var(--mut)}}.btn{{background:var(--acc);color:#fff;text-decoration:none;padding:9px 14px;border-radius:10px;font-weight:600;font-size:14px;white-space:nowrap}}.btn:hover{{background:#115e59}}
-.filters{{position:sticky;top:0;z-index:5;background:rgba(246,247,251,.95);backdrop-filter:blur(6px);padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:16px}}
+.filters{{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 16px;margin-bottom:18px;box-shadow:0 2px 8px rgba(20,30,60,.04)}}
 .frow{{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0}}.frow label{{font-size:12.5px;color:var(--mut);min-width:86px;font-weight:500}}
 .filters button{{border:1px solid var(--line);background:#fff;border-radius:99px;padding:5px 11px;font-size:12.5px;cursor:pointer;color:var(--ink)}}.filters button.on{{background:var(--ink);color:#fff;border-color:var(--ink)}}
 .search-in{{border:1px solid var(--line);background:#fff;border-radius:99px;padding:5px 12px;font-size:12.5px;min-width:210px;color:var(--ink)}}
@@ -579,7 +579,7 @@ dl{{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}}dl div{{mi
 .timeline li div{{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding-top:12px}}.timeline b{{font-size:13.5px;color:#4c1d95}}.timeline span{{font-size:12.5px;color:var(--mut)}}.timeline .k-dl b{{color:var(--red)}}
 .tl-ics{{margin-top:4px;border:1px solid #ddd6fe;background:#f5f3ff;color:#5b21b6;border-radius:6px;padding:2px 7px;font-size:11px;cursor:pointer}}
 .tl-ics:hover{{background:#ede9fe}}
-.ifilters{{position:sticky;top:0;z-index:5;background:rgba(246,247,251,.95);backdrop-filter:blur(6px);padding:10px 0;border-bottom:1px solid var(--line);margin:18px 0 6px}}
+.ifilters{{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 16px;margin:18px 0 10px;box-shadow:0 2px 8px rgba(20,30,60,.04)}}
 .ifilters button{{border:1px solid var(--line);background:#fff;border-radius:99px;padding:5px 11px;font-size:12.5px;cursor:pointer;color:var(--ink)}}.ifilters button.on{{background:#4c1d95;color:#fff;border-color:#4c1d95}}.ifilters small{{opacity:.7}}
 #icount{{font-size:12.5px;color:var(--mut);margin-left:auto}}
 .gh{{margin:30px 0 4px;font-size:20px}}.gh .cnt{{background:#ede9fe;color:#5b21b6;border-radius:99px;font-size:13px;padding:2px 9px;vertical-align:middle}}
@@ -773,10 +773,16 @@ document.querySelectorAll(".trk-note").forEach(ta => {{
     data[id] = data[id] || {{ status: "none", note: "" }};
     data[id].note = ta.value;
     localStorage.setItem(TRK_KEY, JSON.stringify(data));
-    const nbtn = ta.closest(".trk-bar").querySelector(".trk-note-btn");
     const has = Boolean(ta.value.trim());
-    nbtn.classList.toggle("has-note", has);
-    nbtn.textContent = has ? "📝 Nota guardada" : "📝 Nota";
+    document.querySelectorAll(`.card[data-id="${{id}}"]`).forEach(c => {{
+      const otherTa = c.querySelector(".trk-note");
+      if (otherTa && otherTa !== ta) otherTa.value = ta.value;
+      const nbtn = c.querySelector(".trk-note-btn");
+      if (nbtn) {{
+        nbtn.classList.toggle("has-note", has);
+        nbtn.textContent = has ? "📝 Nota guardada" : "📝 Nota";
+      }}
+    }});
   }});
 }});
 
@@ -934,7 +940,7 @@ document.querySelectorAll(".ask-btn").forEach(btn => {{
 
     const qText = questions.length === 1
       ? "Me gustaría consultarles " + questions[0] + "."
-      : "Me gustaría consultarles dos detalles que no figuran en el anuncio:\n- " + questions.map(q => q.charAt(0).toUpperCase() + q.slice(1)).join(".\n- ") + ".";
+      : "Me gustaría consultarles algunos detalles que no figuran en el anuncio:\\n- " + questions.map(q => q.charAt(0).toUpperCase() + q.slice(1)).join(".\\n- ") + ".";
 
     const msg = `Hola, equipo de Selección de ${{org}}:\n\nSoy Ingeniera Química, cuento con experiencia de investigación en almacenamiento de energía en el ICMM-CSIC y actualmente curso el Máster en Ciencia y Tecnología Nuclear en la Universidad Politécnica de Madrid (UPM), con posibilidad de firmar convenio de prácticas.\n\nEstoy muy interesada en la oferta «${{title}}». ${{qText}}\n\nMuchas gracias de antemano por su tiempo y atención.\n\nUn cordial saludo,\nAndrea`;
 

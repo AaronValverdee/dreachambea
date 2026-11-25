@@ -4,8 +4,10 @@ Informe estático de prácticas y becas (Madrid e internacional) para publicarlo
 
 ## Archivos
 
+- `AGENTS.md` — procedimiento semanal para el agente que actualiza el informe.
 - `index.html` — informe listo para servir.
 - `data/opportunities.json` — datos de las ofertas.
+- `data/research-log.md` — qué se miró cada semana y qué quedó pendiente.
 - `scripts/build.py` — regenera `index.html` a partir del JSON.
 - `robots.txt` — pide a los buscadores que no rastreen el sitio.
 - `.nojekyll` — GitHub Pages sirve los archivos tal cual, sin procesarlos con Jekyll.

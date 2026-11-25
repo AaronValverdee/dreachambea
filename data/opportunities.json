@@ -330,6 +330,30 @@
       "url": "https://www.linkedin.com/jobs/view/4493008788/",
       "source": "LinkedIn",
       "verified_on": "2026-11-25"
+    },
+    {
+      "id": "eag-seguridad",
+      "org": "EAG (Empresarios Agrupados – GHESA)",
+      "title": "Becarios/as de ingeniería (incluye Departamento de Seguridad)",
+      "location": "Sede de Madrid (Chamberí)",
+      "modality": "presencial",
+      "modality_label": "Presencial en la sede de Madrid, jornada de mañana",
+      "hours": "25–30 h/semana",
+      "hours_confirmed": true,
+      "pay": "No indicada",
+      "pay_confirmed": false,
+      "deadline": "No indicada",
+      "start": "No indicado. La duración sigue el anexo del convenio con la universidad",
+      "fit": 4,
+      "fit_reason": "En Madrid, 25–30 h en jornada de mañana, y el Departamento de Seguridad pide cálculos radiológicos y recomienda un máster nuclear.",
+      "caveats": "La oferta no dice la remuneración. Hay que seguir matriculada para firmar el convenio. La misma convocatoria mezcla departamentos de diseño mecánico, civil y tuberías: en la solicitud hay que indicar Seguridad. Treinta horas está en el tope del criterio.",
+      "categories": [
+        "nuclear"
+      ],
+      "status": "por_confirmar",
+      "url": "https://empre.teamtailor.com/jobs/7096801-becarios-as-career-opportunities",
+      "source": "Portal de empleo de EAG (Teamtailor)",
+      "verified_on": "2026-11-25"
     }
   ],
   "top5": [
@@ -421,7 +445,7 @@
     },
     {
       "name": "Naturgy, ACCIONA, Moeve, IDOM, Enagás, Endesa, Redeia",
-      "detail": "Moeve: su buscador no carga sin navegador; solo se leyeron ofertas sueltas, ninguna afín. IDOM: la beca nuclear es en Bilbao.",
+      "detail": "Moeve: su buscador no carga sin navegador; solo se leyeron ofertas sueltas, ninguna afín. IDOM: la beca nuclear es en Bilbao. Repaso del 25/11/2026: Moeve Welcome U (Innovación Analítica, Centro de Innovación) aparece en agregadores para ingeniería química, laboratorio de biomasa e hidrógeno, remunerada y con un mínimo de 6 meses, pero no se encontró el anuncio en moeve.com y los agregadores no coinciden en el plazo ni dicen las horas, así que no hay ficha. Endesa SWING, visto en jobs.enel.com y en Talentoteca, está a 35 h o 7 h/día.",
       "status": "parcial"
     },
     {
@@ -453,6 +477,16 @@
       "name": "InfoJobs, Indeed, Euraxess, UPM COIE",
       "detail": "No revisados a fondo (antibots o requieren inicio de sesión).",
       "status": "no"
+    },
+    {
+      "name": "EAG (Teamtailor) y OCDE",
+      "detail": "Anuncio oficial de becarios de EAG en Madrid, 25–30 h, remuneración no indicada. La OCDE confirma prácticas continuas con la NEA entre los destinos, 1.000 €/mes en París.",
+      "status": "ok"
+    },
+    {
+      "name": "CSN, ENRESA, CIEMAT, UKAEA, IAEA",
+      "detail": "CSN sigue en la convocatoria de becas de 2024. ENRESA no tiene una beca de máster en Madrid abierta. CIEMAT, en lo visto, ofrece prácticas de FP y empleo a jornada completa. UKAEA Graduate 2027 está cerrado. El tablón de la IAEA no se dio por bueno a partir de agregadores.",
+      "status": "parcial"
     }
   ],
   "international": {
@@ -1108,6 +1142,27 @@
         "req": "La invitación sale del profesor. Hace falta visado J-1 y acreditar fondos (ver FAQ del ISO).",
         "url": "https://iso.mit.edu/getting-started/visiting-students-faq/",
         "source": "iso.mit.edu · nse.mit.edu"
+      },
+      {
+        "id": "oecd-nea",
+        "group": "programa",
+        "country": "FR",
+        "country_label": "Francia",
+        "org": "OCDE – Nuclear Energy Agency",
+        "title": "Prácticas en la NEA (admisión continua)",
+        "location": "París y Boulogne-Billancourt (sede de la NEA). Híbrido posible según el equipo",
+        "deadline": "Sin plazo único. Admisión continua y la vacante se republica. Conviene mirar el formulario otra vez el 31/12/2026",
+        "dl_sort": "continua",
+        "start": "A acordar con el equipo. El proceso puede tardar unos tres meses",
+        "duration": "De 1 a 6 meses, renovable hasta 12",
+        "pay": "1.000 € por mes completo en París",
+        "hours": "40 h/semana. Tiempo parcial solo de forma excepcional, mínimo 20 h",
+        "fit": 3,
+        "status": "continua",
+        "why": "La NEA está en la lista oficial de destinos y España es país miembro. Sirve para el periodo de prácticas del máster, a jornada completa: el trabajo habitual es análisis y política nuclear, no laboratorio.",
+        "req": "Seguir matriculada durante toda la estancia. Inglés o francés de nivel alto y disposición a usar el otro. Indicar fechas disponibles en la solicitud.",
+        "url": "https://www.oecd.org/en/about/careers/internships.html",
+        "source": "Página oficial de prácticas de la OCDE"
       }
     ],
     "extra_links": [
@@ -1131,7 +1186,7 @@
     "watch": [
       {
         "name": "F4E Traineeships (Barcelona, Cadarache o Garching)",
-        "detail": "Ahora cerrada. Beca de 1.400 €/mes en Barcelona, para titulados y teletrabajo parcial. Próxima convocatoria: fecha no publicada.",
+        "detail": "Ahora cerrada. La convocatoria 2026-2027 cerró el 12/05/2026 y la web oficial sigue en «applications are now closed». Beca de 1.400 €/mes en Barcelona, 1.501,96 € en Cadarache y 1.420,53 € en Garching, para titulados. Si se repite el calendario, la siguiente llamada cae en primavera de 2027.",
         "url": "https://fusionforenergy.europa.eu/traineeships/"
       },
       {
@@ -1148,6 +1203,11 @@
         "name": "ITER, ola 2",
         "detail": "Se abrirá del 01/03 al 28/03/2027 con nuevos temas.",
         "url": "https://www.iter.org/public/jobs/internships"
+      },
+      {
+        "name": "Prácticas IAEA (Viena o Seibersdorf)",
+        "detail": "Convocatoria continua, plaza a plaza, en el tablón oficial. 1.450 €/mes a jornada completa, de 3 a 12 meses, hasta un año después de terminar el título. Hacen falta dos cartas firmadas. No usar el plazo que publique solo un agregador.",
+        "url": "https://www.iaea.org/about/employment/internships"
       }
     ],
     "timeline": [
@@ -1160,6 +1220,11 @@
         "date": "Mediados de dic. 2026",
         "event": "Abren las solicitudes del PSI Summer Student 2027",
         "kind": "open"
+      },
+      {
+        "date": "31/12/2026",
+        "event": "Comprobar si la OCDE ha republicado la vacante de prácticas (NEA / IEA)",
+        "kind": "info"
       },
       {
         "date": "21/01/2027",
@@ -1208,7 +1273,9 @@
       "Orano, cálculos de protección radiológica en Cherbourg (404)",
       "ASNR, criticidad SILENE (oferta inexistente)",
       "newcleo Lyon (404)",
-      "CEA Cadarache: alternancia en protección radiológica (exige contrato de aprendiz en Francia)"
+      "CEA Cadarache: alternancia en protección radiológica (exige contrato de aprendiz en Francia)",
+      "UKAEA Graduate Programme 2027 (cerró en octubre de 2026). FOSTER financia a universidades del Reino Unido y no es una solicitud desde la UPM",
+      "Naarea / XAMR (liquidación en 2026; no volver a buscar)"
     ]
   }
 }

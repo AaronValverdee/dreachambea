@@ -6,7 +6,7 @@ import json
 import os
 import re
 import urllib.parse
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from cryptography.hazmat.primitives import hashes
@@ -24,9 +24,12 @@ H = html.escape
 data = json.loads(DATA.read_text(encoding="utf-8"))
 UPDATED = data["updated"]
 try:
-    UPDATED_ISO = datetime.strptime(UPDATED, "%d/%m/%Y").strftime("%Y-%m-%d")
+    UPDATED_DATE = datetime.strptime(UPDATED, "%d/%m/%Y").date()
+    UPDATED_ISO = UPDATED_DATE.strftime("%Y-%m-%d")
 except ValueError:
+    UPDATED_DATE = None
     UPDATED_ISO = UPDATED
+NEW_LOOKBACK = timedelta(days=6)
 
 opps = data["opportunities"]
 top5 = data["top5"]
@@ -91,8 +94,14 @@ latest_log, log_new_ids = parse_latest_log()
 def is_new_card(o):
     if o.get("id") in log_new_ids:
         return True
-    added = o.get("added_on", "")
-    return bool(added and added == UPDATED_ISO)
+    raw = o.get("first_seen") or o.get("added_on") or ""
+    if not raw or not UPDATED_DATE:
+        return False
+    try:
+        seen = datetime.strptime(raw, "%Y-%m-%d").date()
+    except ValueError:
+        return False
+    return UPDATED_DATE - NEW_LOOKBACK <= seen <= UPDATED_DATE
 
 
 def extract_iso_date(text, fallback_iso=""):

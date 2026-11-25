@@ -161,13 +161,21 @@ En internacional, `group` es `programa`, `stage` o `contacto`. `status` es `abie
 
 ## Campos que no se dejan a medias
 
-Madrid: `id`, `org`, `title`, `location`, `modality` (`hibrido`, `remoto`, `presencial`, `no_indicado`), `modality_label`, `hours`, `hours_confirmed`, `pay`, `pay_confirmed`, `deadline`, `start`, `fit`, `fit_reason`, `caveats`, `categories` (solo `energia`, `almacenamiento`, `nuclear`, `investigacion`, `consultoria`, `innovacion`), `status` (`cumple` o `por_confirmar`), `url`, `source`, `verified_on` (`AAAA-MM-DD`). Opcional: `added_on` (`AAAA-MM-DD`, fecha en que se añadió por primera vez la ficha para destacar novedades de la semana).
+Madrid: `id`, `org`, `title`, `location`, `modality` (`hibrido`, `remoto`, `presencial`, `no_indicado`), `modality_label`, `hours`, `hours_confirmed`, `pay`, `pay_confirmed`, `deadline`, `start`, `fit`, `fit_reason`, `caveats`, `categories` (solo `energia`, `almacenamiento`, `nuclear`, `investigacion`, `consultoria`, `innovacion`), `status` (`cumple` o `por_confirmar`), `url`, `source`, `verified_on` (`AAAA-MM-DD`), `first_seen` (`AAAA-MM-DD`).
 
-Internacional: `id`, `group`, `country`, `country_label`, `org`, `title`, `location`, `deadline`, `dl_sort` (`AAAA-MM-DD` o `continua`), `start`, `duration`, `pay`, `hours`, `fit`, `status`, `why`, `req`, `url`, `source`. Opcional: `added_on` (`AAAA-MM-DD`, fecha en que entró por primera vez al informe).
+Radar: los mismos datos que ya lleva cada fila (`org`, `title`, `why`, `deadline`, `url`) y `first_seen` (`AAAA-MM-DD`).
+
+Internacional: `id`, `group`, `country`, `country_label`, `org`, `title`, `location`, `deadline`, `dl_sort` (`AAAA-MM-DD` o `continua`), `start`, `duration`, `pay`, `hours`, `fit`, `status`, `why`, `req`, `url`, `source`, `first_seen` (`AAAA-MM-DD`).
 
 `id` en minúsculas y guiones, estable entre semanas.
 
 Textos del informe en español, como el resto de la página.
+
+## Etiqueta «Nuevo»
+
+`first_seen` es el día en que la ficha entró en el JSON. En una ficha nueva es la fecha del run (`AAAA-MM-DD`, el mismo día que `updated`). En una ficha que ya existe no se toca, aunque cambien horas, sueldo, plazo o lista.
+
+`scripts/build.py` muestra la etiqueta «Nuevo» en las fichas de Madrid, del radar y de internacional cuando `first_seen` cae en los 7 días naturales que terminan en `updated`: desde `updated` − 6 días hasta `updated`, los dos inclusive. Una ficha de la semana anterior deja de llevarla en el run siguiente. No hace falta otro campo. La cabecera cuenta esas fichas («nuevas en Madrid, radar e internacional») y hay un filtro «Solo nuevas» en Madrid, en el radar y en internacional.
 
 ## Log
 
